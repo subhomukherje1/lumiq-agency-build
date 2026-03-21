@@ -81,6 +81,31 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 - App.tsx - Added /paid-advertising route
 - CaseStudyDetail.tsx, casestudies.ts - Service names
 
+### January 2026 - CTAs, Calendly & Partners Page
+
+**Hero CTA Updates:**
+- /cro: "Start with a CRO audit"
+- /paid-advertising: "Start with a paid advertising audit"
+- /analytics: "Start with an analytics audit" (unchanged reference)
+- All three pages have consistent reassurance items
+
+**Navigation CTA:**
+- "Get Free Audit" → "Request a Revenue Teardown"
+
+**Floating Button:**
+- WhatsApp button removed
+- Calendly button added (purple #7B2FBE, calendar icon, pulse animation)
+- Tooltip: "Book a 30-min strategy call"
+
+**New Partners Page (/partners):**
+- Hero: "The tools we use to build your revenue engine"
+- 27 partner tools across 5 categories
+- Filter bar with smooth transitions
+- Categories: Analytics, Experimentation & CRO, Paid Media, CRM & Automation, AI Tools
+- Each card: category pill, logo placeholder, name, description, Visit Website link
+- CTA section with "Request a Revenue Teardown"
+- Added to navbar and footer
+
 ## Backlog / Next Steps
 
 ### P0 (Critical Before Launch)
