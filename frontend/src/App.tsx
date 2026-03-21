@@ -13,6 +13,7 @@
  */
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -42,32 +43,34 @@ const PageLoader = () => (
 );
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Navbar />
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/cro" element={<CRO />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/paid-advertising" element={<PaidMedia />} />
-            <Route path="/paid-media" element={<PaidMedia />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/partners" element={<Partners />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-        <Footer />
-        <CalendlyButton />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Navbar />
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/cro" element={<CRO />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/paid-advertising" element={<PaidMedia />} />
+              <Route path="/paid-media" element={<PaidMedia />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/partners" element={<Partners />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+          <Footer />
+          <CalendlyButton />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

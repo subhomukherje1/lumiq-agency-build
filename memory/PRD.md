@@ -149,6 +149,45 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 - 48px diameter on mobile (was 56px)
 - Positioned higher (bottom-20) to avoid iOS Safari bar
 
+### January 2026 - SEO Optimization Pass
+
+**Meta Tags (all pages):**
+- Unique title tags containing "Revium Labs"
+- Meta descriptions (max 160 chars)
+- Keywords for each page
+- Canonical URLs pointing to reviumlabs.co
+
+**Open Graph & Twitter Cards:**
+- og:type, og:site_name, og:url, og:title, og:description, og:image
+- twitter:card, twitter:site (@reviumlabs), twitter:title, twitter:description
+
+**Structured Data (JSON-LD):**
+- Homepage: Organization + WebSite schemas
+- Service pages: Service schema
+- Case studies: Article schema
+- Contact: FAQPage schema
+
+**Technical SEO:**
+- sitemap.xml with all 13 URLs
+- robots.txt with sitemap reference
+- HelmetProvider wrapped around App
+- Preconnect links for fonts, clearbit, gtag
+
+**Internal Linking:**
+- RelatedServices component on CRO, Analytics, PaidMedia pages
+- "Explore our other services" section with 2 related service links
+- Homepage service cards link to correct pages
+
+**Page Titles Updated:**
+- Homepage: "Revium Labs — B2B Analytics, CRO & AI-Powered Revenue Growth"
+- CRO: "Conversion Rate Optimization for B2B SaaS — Revium Labs"
+- Analytics: "B2B Analytics & Attribution Agency — Revium Labs"
+- Paid Advertising: "B2B Paid Advertising Agency — LinkedIn ABM & Google Ads | Revium Labs"
+- Our Model: "How We Build Your Revenue Engine — Revium Labs"
+- Partners: "Tools & Technology Partners — Revium Labs"
+- Case Studies: "B2B Marketing Case Studies & Results — Revium Labs"
+- Contact: "Request a Revenue Teardown — Revium Labs"
+
 ## Backlog / Next Steps
 
 ### P0 (Critical Before Launch)
