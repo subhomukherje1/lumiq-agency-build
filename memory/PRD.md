@@ -60,6 +60,27 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 
 **No Pricing/Dollar Amounts** - Entire page focuses on methodology, not costs
 
+### January 2026 - Service Category Simplification
+
+**Services Simplified to 3:**
+- Paid Advertising (was "Performance Marketing")
+- Conversion Rate Optimization (was "CRO & Experimentation")
+- Analytics & Attribution (unchanged)
+
+**Navigation Updates:**
+- Services dropdown shows exactly 3 items (no Case Studies)
+- "Module" references removed from homepage → "services"
+- "See how it works" CTA now links to /pricing (Our Model)
+
+**Route Changes:**
+- `/paid-advertising` - new primary route
+- `/paid-media` - kept for backward compatibility
+
+**Updated Files:**
+- Navbar.tsx, Footer.tsx, Index.tsx, PaidMedia.tsx, CRO.tsx
+- App.tsx - Added /paid-advertising route
+- CaseStudyDetail.tsx, casestudies.ts - Service names
+
 ## Backlog / Next Steps
 
 ### P0 (Critical Before Launch)
