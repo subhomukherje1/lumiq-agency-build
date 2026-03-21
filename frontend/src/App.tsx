@@ -20,6 +20,7 @@ import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CalendlyButton from "@/components/CalendlyButton";
 import Index from "./pages/Index";
 
 const CRO = lazy(() => import("./pages/CRO"));
@@ -28,6 +29,7 @@ const PaidMedia = lazy(() => import("./pages/PaidMedia"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
 const Pricing = lazy(() => import("./pages/Pricing"));
+const Partners = lazy(() => import("./pages/Partners"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -56,12 +58,13 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/partners" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         <Footer />
-        <WhatsAppButton />
+        <CalendlyButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

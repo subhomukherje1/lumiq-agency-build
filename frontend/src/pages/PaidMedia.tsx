@@ -86,7 +86,7 @@ const PaidMedia = () => (
             to="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors"
           >
-            See how we would approach your account <ArrowRight className="w-4 h-4" />
+            Start with a paid advertising audit <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
         <HeroProofPoints />

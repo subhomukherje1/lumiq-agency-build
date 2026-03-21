@@ -34,6 +34,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link to="/case-studies" className="text-sm text-white/70 hover:text-white transition-colors">Case Studies</Link></li>
               <li><Link to="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Our Model</Link></li>
+              <li><Link to="/partners" className="text-sm text-white/70 hover:text-white transition-colors">Partners</Link></li>
               <li><Link to="/contact" className="text-sm text-white/70 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -47,11 +48,7 @@ const Footer = () => {
                   <Mail className="w-4 h-4" /> hello@reviumlabs.co
                 </a>
               </li>
-              <li>
-                <a href="https://wa.me/14155551234" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center md:justify-start gap-2 text-sm text-white/70 hover:text-white transition-colors min-h-[44px]">
-                  <Phone className="w-4 h-4" /> +1 (415) 555-1234
-                </a>
-              </li>
+              {/* WhatsApp button removed as per requirements */}
               <li>
                 <a href="https://linkedin.com/company/reviumlabs" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center md:justify-start gap-2 text-sm text-white/70 hover:text-white transition-colors min-h-[44px]">
                   <Linkedin className="w-4 h-4" /> LinkedIn
