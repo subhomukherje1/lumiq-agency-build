@@ -323,7 +323,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-12 text-base font-semibold"
+                  className="w-full h-12 md:h-12 text-base font-semibold min-h-[52px]"
                 >
                   {loading ? (
                     <>

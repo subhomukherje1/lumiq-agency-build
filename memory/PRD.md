@@ -106,6 +106,49 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 - CTA section with "Request a Revenue Teardown"
 - Added to navbar and footer
 
+### January 2026 - Mobile Optimization Pass
+
+**Global CSS Updates:**
+- `overflow-x: hidden` on html/body
+- 16px minimum font for inputs (prevents iOS zoom)
+- 44px minimum tap targets
+- Mobile section padding adjustments
+
+**Navigation:**
+- Hamburger menu (Menu icon) at 768px breakpoint
+- Slide-down animation (300ms)
+- Dark background (#0D0D1A)
+- Services sub-menu with expand/collapse
+- Full-width CTA button inside menu
+- Body scroll lock when menu open
+
+**Typography:**
+- Hero headlines: 32px on mobile (was 64-72px)
+- Section headlines: 26px on mobile (was 40-48px)
+- Body text: 16px minimum
+- Consistent leading/line-height
+
+**Layouts:**
+- 3-col grids → 1-col on mobile
+- 4-col stats → 2x2 grid on mobile
+- Phase cards: vertical stack
+- Partner cards: single column (2-col on tablet)
+- Footer: center-aligned, vertical stack
+
+**Buttons:**
+- Full-width primary CTAs on mobile
+- 52px minimum height
+- Proper tap target spacing
+
+**Partners Filter Bar:**
+- Horizontally scrollable with touch support
+- Smaller padding on mobile
+- overflow:hidden on parent section
+
+**Calendly Button:**
+- 48px diameter on mobile (was 56px)
+- Positioned higher (bottom-20) to avoid iOS Safari bar
+
 ## Backlog / Next Steps
 
 ### P0 (Critical Before Launch)

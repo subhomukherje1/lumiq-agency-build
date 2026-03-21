@@ -248,7 +248,7 @@ const Partners = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 2 — FILTER BAR
       ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-4 md:py-8 border-b border-border sticky top-16 md:top-20 z-40">
+      <section className="bg-white py-4 md:py-8 border-b border-border sticky top-16 md:top-20 z-40 overflow-hidden">
         <div className="container mx-auto px-5 md:px-6">
           <div 
             className="flex gap-2 md:gap-3 md:justify-center overflow-x-auto pb-2 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 scrollbar-hide"
@@ -259,7 +259,7 @@ const Partners = () => {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap min-h-[44px] ${
+                className={`px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all whitespace-nowrap min-h-[44px] shrink-0 ${
                   activeFilter === cat
                     ? "bg-primary text-white"
                     : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
