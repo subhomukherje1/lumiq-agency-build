@@ -79,7 +79,7 @@ const Navbar = () => {
             Case Studies
           </Link>
           <Link to="/pricing" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
-            Pricing
+            Our Model
           </Link>
           <Link to="/contact" className={`text-sm font-medium transition-colors ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
             Contact
@@ -124,7 +124,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link to="/case-studies" className="block px-3 py-3 text-sm font-medium text-foreground hover:text-primary min-h-[44px] flex items-center">Case Studies</Link>
-              <Link to="/pricing" className="block px-3 py-3 text-sm font-medium text-foreground hover:text-primary min-h-[44px] flex items-center">Pricing</Link>
+              <Link to="/pricing" className="block px-3 py-3 text-sm font-medium text-foreground hover:text-primary min-h-[44px] flex items-center">Our Model</Link>
               <Link to="/contact" className="block px-3 py-3 text-sm font-medium text-foreground hover:text-primary min-h-[44px] flex items-center">Contact</Link>
               <Link to="/contact" className="block mt-4 text-center px-5 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold min-h-[44px] flex items-center justify-center">
                 Get Free Audit
