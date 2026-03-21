@@ -102,10 +102,10 @@ const OurModel = () => (
     {/* ═══════════════════════════════════════════════════════════════════
         SECTION 1 — HERO
     ═══════════════════════════════════════════════════════════════════ */}
-    <section className="bg-[#0D0D1A] pt-32 pb-24">
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section className="bg-[#0D0D1A] pt-24 md:pt-32 pb-16 md:pb-24">
+      <div className="container mx-auto px-5 md:px-6 max-w-4xl">
         <motion.span
-          className="inline-block text-accent-pink text-xs font-bold uppercase tracking-[0.2em] mb-6"
+          className="inline-block text-accent-pink text-xs font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -115,7 +115,7 @@ const OurModel = () => (
         </motion.span>
 
         <motion.h1
-          className="font-display text-[1.75rem] sm:text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-3xl"
+          className="font-display text-[28px] leading-[1.15] sm:text-4xl md:text-6xl font-extrabold text-white max-w-3xl"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
@@ -125,7 +125,7 @@ const OurModel = () => (
         </motion.h1>
 
         <motion.p
-          className="mt-8 text-lg text-white/50 max-w-[660px] leading-relaxed"
+          className="mt-5 md:mt-8 text-base md:text-lg text-white/50 max-w-[660px] leading-relaxed"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -139,33 +139,33 @@ const OurModel = () => (
     {/* ═══════════════════════════════════════════════════════════════════
         SECTION 2 — PHASE CARDS
     ═══════════════════════════════════════════════════════════════════ */}
-    <section className="bg-white py-24 md:py-32">
-      <div className="container mx-auto px-6">
+    <section className="bg-white py-16 md:py-32">
+      <div className="container mx-auto px-5 md:px-6">
         {/* Section Intro */}
-        <div className="max-w-[580px] mx-auto text-center mb-16">
+        <div className="max-w-[580px] mx-auto text-center mb-10 md:mb-16">
           <AnimatedSection>
-            <span className="text-sm font-bold text-primary uppercase tracking-[0.15em]">
+            <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-[0.12em] md:tracking-[0.15em]">
               The System
             </span>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="mt-4 font-display text-3xl md:text-5xl font-extrabold text-foreground leading-tight">
+            <h2 className="mt-3 md:mt-4 font-display text-[26px] leading-tight md:text-5xl font-extrabold text-foreground">
               Three phases. One revenue engine.
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
+            <p className="mt-4 md:mt-6 text-sm md:text-base text-muted-foreground leading-relaxed">
               Most agencies skip straight to running ads. We don't. Each phase builds on the last — and we don't move to the next until the foundation is solid.
             </p>
           </AnimatedSection>
         </div>
 
         {/* Phase Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
           {phases.map((phase, i) => (
             <AnimatedSection key={phase.number} delay={i * 0.1}>
               <div
-                className={`rounded-2xl p-8 h-full flex flex-col bg-white border ${
+                className={`rounded-2xl p-6 md:p-8 h-full flex flex-col bg-white border ${
                   phase.featured
                     ? "border-primary/40 shadow-lg shadow-primary/5"
                     : "border-border"
@@ -217,21 +217,21 @@ const OurModel = () => (
     {/* ═══════════════════════════════════════════════════════════════════
         SECTION 3 — WHY THIS ORDER MATTERS
     ═══════════════════════════════════════════════════════════════════ */}
-    <section className="bg-muted py-24 md:py-32">
-      <div className="container mx-auto px-6">
+    <section className="bg-muted py-16 md:py-32">
+      <div className="container mx-auto px-5 md:px-6">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection>
-            <span className="text-sm font-bold text-primary uppercase tracking-[0.15em]">
+            <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-[0.12em] md:tracking-[0.15em]">
               Why The Sequence Matters
             </span>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl font-extrabold text-foreground leading-tight max-w-2xl">
+            <h2 className="mt-3 md:mt-4 font-display text-[26px] leading-tight md:text-4xl font-extrabold text-foreground max-w-2xl">
               Most agencies start at Phase 3. That is the problem.
             </h2>
           </AnimatedSection>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             {/* Timeline */}
             <div className="md:col-span-4">
               <AnimatedSection delay={0.2}>
@@ -240,7 +240,7 @@ const OurModel = () => (
                   <div className="absolute left-[11px] top-3 bottom-3 w-0.5 bg-primary/30" />
                   
                   {/* Node 1 */}
-                  <div className="relative mb-8">
+                  <div className="relative mb-6 md:mb-8">
                     <div className="absolute left-[-20px] top-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-white" />
                     </div>
@@ -248,7 +248,7 @@ const OurModel = () => (
                   </div>
 
                   {/* Node 2 */}
-                  <div className="relative mb-8">
+                  <div className="relative mb-6 md:mb-8">
                     <div className="absolute left-[-20px] top-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-white" />
                     </div>
@@ -264,26 +264,26 @@ const OurModel = () => (
                   </div>
                 </div>
 
-                <p className="mt-8 text-sm text-muted-foreground italic">
+                <p className="mt-6 md:mt-8 text-sm text-muted-foreground italic">
                   "Skipping phases is how agencies waste your budget."
                 </p>
               </AnimatedSection>
             </div>
 
             {/* Content */}
-            <div className="md:col-span-8 space-y-6">
+            <div className="md:col-span-8 space-y-4 md:space-y-6">
               <AnimatedSection delay={0.3}>
-                <p className="text-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-foreground leading-relaxed">
                   If your tracking is broken, every campaign decision you make is based on fiction. You might be scaling your worst-performing channel and cutting the one that actually works — and your dashboard is telling you the opposite. Phase 1 exists because you cannot fix what you cannot see.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.4}>
-                <p className="text-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-foreground leading-relaxed">
                   If your landing pages convert at 1.5% and your CRM has duplicate leads everywhere, spending more on ads makes the problem bigger, not better. Phase 2 exists because traffic is only valuable when the infrastructure is ready to receive it.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.5}>
-                <p className="text-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-foreground leading-relaxed">
                   Once Phases 1 and 2 are done, Phase 3 is where the compounding begins. Clean data feeding into high-intent campaigns, optimised by continuous A/B testing, reported through dashboards your CEO actually trusts. That is the revenue engine.
                 </p>
               </AnimatedSection>
@@ -296,21 +296,21 @@ const OurModel = () => (
     {/* ═══════════════════════════════════════════════════════════════════
         SECTION 4 — HOW EVERY ENGAGEMENT STARTS
     ═══════════════════════════════════════════════════════════════════ */}
-    <section className="bg-white py-24 md:py-32">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+    <section className="bg-white py-16 md:py-32">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
           <AnimatedSection>
-            <span className="text-sm font-bold text-primary uppercase tracking-[0.15em]">
+            <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-[0.12em] md:tracking-[0.15em]">
               How It Starts
             </span>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="mt-4 font-display text-3xl md:text-5xl font-extrabold text-foreground leading-tight">
+            <h2 className="mt-3 md:mt-4 font-display text-[26px] leading-tight md:text-5xl font-extrabold text-foreground">
               Every engagement begins the same way.
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <p className="mt-6 text-muted-foreground leading-relaxed max-w-[540px] mx-auto">
+            <p className="mt-4 md:mt-6 text-sm md:text-base text-muted-foreground leading-relaxed max-w-[540px] mx-auto">
               We never scope an engagement without understanding your specific situation first. That starts with a Revenue Teardown.
             </p>
           </AnimatedSection>
@@ -318,31 +318,34 @@ const OurModel = () => (
 
         {/* Steps */}
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 relative">
             {/* Connecting arrows on desktop */}
             <div className="hidden md:block absolute top-16 left-[calc(33.33%-20px)] w-[calc(33.33%+40px)] border-t-2 border-dashed border-primary/30" />
             <div className="hidden md:block absolute top-16 left-[calc(66.66%-20px)] w-[calc(33.33%+40px)] border-t-2 border-dashed border-primary/30" />
 
+            {/* Mobile vertical connecting line */}
+            <div className="md:hidden absolute left-6 top-12 bottom-12 w-0.5 bg-primary/20" />
+
             {steps.map((step, i) => (
               <AnimatedSection key={step.number} delay={i * 0.15}>
-                <div className="text-center" data-testid={`step-${i + 1}`}>
+                <div className="text-center md:text-center relative" data-testid={`step-${i + 1}`}>
                   {/* Number Circle */}
                   <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground font-display font-bold text-lg flex items-center justify-center mx-auto">
                     {step.number}
                   </div>
 
                   {/* Icon */}
-                  <div className="mt-6 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
-                    <step.icon className="w-6 h-6 text-primary" />
+                  <div className="mt-4 md:mt-6 w-12 md:w-14 h-12 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto">
+                    <step.icon className="w-5 md:w-6 h-5 md:h-6 text-primary" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-5 font-display text-lg font-bold text-foreground">
+                  <h3 className="mt-4 md:mt-5 font-display text-base md:text-lg font-bold text-foreground">
                     {step.title}
                   </h3>
 
                   {/* Body */}
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  <p className="mt-2 md:mt-3 text-sm text-muted-foreground leading-relaxed">
                     {step.body}
                   </p>
                 </div>
@@ -356,36 +359,36 @@ const OurModel = () => (
     {/* ═══════════════════════════════════════════════════════════════════
         SECTION 5 — WHAT MAKES THIS DIFFERENT
     ═══════════════════════════════════════════════════════════════════ */}
-    <section className="bg-[#1D0632] py-24 md:py-32">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+    <section className="bg-[#1D0632] py-16 md:py-32">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
           <AnimatedSection>
-            <span className="text-sm font-bold text-accent-pink uppercase tracking-[0.15em]">
+            <span className="text-xs md:text-sm font-bold text-accent-pink uppercase tracking-[0.12em] md:tracking-[0.15em]">
               Why This Is Different
             </span>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            <h2 className="mt-3 md:mt-4 font-display text-[26px] leading-tight md:text-4xl font-extrabold text-white">
               This is not how most agencies work. That is the point.
             </h2>
           </AnimatedSection>
         </div>
 
         {/* Differentiator Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-3xl mx-auto">
           {differentiators.map((item, i) => (
             <AnimatedSection key={item.label} delay={i * 0.1}>
               <div
-                className="rounded-2xl bg-white/5 border border-white/10 p-8"
+                className="rounded-2xl bg-white/5 border border-white/10 p-4 md:p-8"
                 data-testid={`differentiator-${i + 1}`}
               >
-                <span className="text-5xl font-display font-extrabold text-accent-pink">
+                <span className="text-3xl md:text-5xl font-display font-extrabold text-accent-pink">
                   {item.number}
                 </span>
-                <h3 className="mt-4 font-display font-bold text-white text-lg">
+                <h3 className="mt-2 md:mt-4 font-display font-bold text-white text-sm md:text-lg">
                   {item.label}
                 </h3>
-                <p className="mt-2 text-sm text-white/50 leading-relaxed">
+                <p className="mt-1 md:mt-2 text-xs md:text-sm text-white/50 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -398,24 +401,24 @@ const OurModel = () => (
     {/* ═══════════════════════════════════════════════════════════════════
         SECTION 6 — BOTTOM CTA
     ═══════════════════════════════════════════════════════════════════ */}
-    <section className="bg-[#0D0D1A] py-24 md:py-32">
-      <div className="container mx-auto px-6 text-center">
+    <section className="bg-[#0D0D1A] py-16 md:py-32">
+      <div className="container mx-auto px-5 md:px-6 text-center">
         <AnimatedSection>
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-white leading-tight max-w-2xl mx-auto">
+          <h2 className="font-display text-[26px] leading-tight md:text-5xl font-extrabold text-white max-w-2xl mx-auto">
             Stop guessing. Start scaling.
           </h2>
         </AnimatedSection>
         <AnimatedSection delay={0.1}>
-          <p className="mt-6 text-lg text-white/50 max-w-[560px] mx-auto leading-relaxed">
+          <p className="mt-4 md:mt-6 text-base md:text-lg text-white/50 max-w-[560px] mx-auto leading-relaxed">
             Every engagement starts with a deep-dive audit so we both know exactly what needs to be fixed before any long-term commitments are made.
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors text-base min-h-[52px]"
               data-testid="cta-primary"
             >
               Request a Revenue Teardown <ArrowRight className="w-4 h-4" />
@@ -424,7 +427,7 @@ const OurModel = () => (
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/30 text-white font-semibold hover:bg-white/5 transition-colors text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/30 text-white font-semibold hover:bg-white/5 transition-colors text-base min-h-[52px]"
               data-testid="cta-secondary"
             >
               Book a Strategy Session
@@ -433,7 +436,7 @@ const OurModel = () => (
         </AnimatedSection>
 
         <AnimatedSection delay={0.3}>
-          <p className="mt-8 text-sm text-white/30 max-w-md mx-auto">
+          <p className="mt-6 md:mt-8 text-sm text-white/30 max-w-md mx-auto">
             Audit delivered within 5 business days. No retainer required until Phase 2. No long-term commitment to get started.
           </p>
         </AnimatedSection>

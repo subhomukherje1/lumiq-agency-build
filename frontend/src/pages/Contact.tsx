@@ -106,10 +106,10 @@ const Contact = () => {
     <main className="bg-background">
       <PageMeta title="Contact — Revium Labs" description="Book a call, request a free audit, or message us on WhatsApp. We review your site before any conversation." />
       {/* ───── HERO ───── */}
-      <section className="bg-dark pt-32 pb-20">
-        <div className="container mx-auto px-6 text-center">
+      <section className="bg-dark pt-24 md:pt-32 pb-12 md:pb-20">
+        <div className="container mx-auto px-5 md:px-6 text-center">
           <motion.h1
-            className="font-display text-[1.75rem] sm:text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto"
+            className="font-display text-[28px] leading-[1.15] sm:text-4xl md:text-6xl font-extrabold text-white max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -117,7 +117,7 @@ const Contact = () => {
             Let us find where your funnel is leaking.
           </motion.h1>
           <motion.p
-            className="mt-6 text-[15px] md:text-xl text-white/60 max-w-2xl mx-auto"
+            className="mt-4 md:mt-6 text-base md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
@@ -130,21 +130,21 @@ const Contact = () => {
       </section>
 
       {/* ───── CONTACT OPTIONS ───── */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-12 md:py-24">
+        <div className="container mx-auto px-5 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {contactCards.map((card, i) => (
               <AnimatedSection key={card.title} delay={i * 0.1}>
-                <div className="rounded-2xl border border-border bg-card p-8 flex flex-col h-full">
+                <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col h-full">
                   <div
-                    className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${card.iconClass}`}
+                    className={`w-12 md:w-14 h-12 md:h-14 rounded-xl flex items-center justify-center mb-4 md:mb-6 ${card.iconClass}`}
                   >
-                    <card.icon className="w-6 h-6" />
+                    <card.icon className="w-5 md:w-6 h-5 md:h-6" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                  <h3 className="font-display text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed flex-1">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed flex-1">
                     {card.body}
                   </p>
                   {card.external ? (
@@ -152,7 +152,7 @@ const Contact = () => {
                       href={card.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                      className="mt-4 md:mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:underline min-h-[44px]"
                     >
                       {card.buttonText} <ArrowRight className="w-4 h-4" />
                     </a>
@@ -160,7 +160,7 @@ const Contact = () => {
                     <a
                       href={card.href}
                       onClick={scrollToForm}
-                      className="mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer"
+                      className="mt-4 md:mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer min-h-[44px]"
                     >
                       {card.buttonText} <ArrowRight className="w-4 h-4" />
                     </a>
@@ -173,13 +173,13 @@ const Contact = () => {
       </section>
 
       {/* ───── AUDIT FORM ───── */}
-      <section id="audit-form" className="bg-muted py-24">
-        <div className="container mx-auto px-6 max-w-2xl">
-          <AnimatedSection className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground">
+      <section id="audit-form" className="bg-muted py-12 md:py-24">
+        <div className="container mx-auto px-5 md:px-6 max-w-2xl">
+          <AnimatedSection className="text-center mb-8 md:mb-12">
+            <h2 className="font-display text-[26px] leading-tight md:text-4xl font-extrabold text-foreground">
               Request your free audit.
             </h2>
-            <p className="mt-4 text-muted-foreground text-lg">
+            <p className="mt-3 md:mt-4 text-sm md:text-lg text-muted-foreground leading-relaxed">
               Tell us a little about your business and we will get back to you
               within one business day.
             </p>

@@ -15,9 +15,9 @@ const CTABanner = ({
 }: CTABannerProps) => {
   return (
     <section className="bg-section">
-      <div className="container mx-auto px-6 py-24 text-center">
+      <div className="container mx-auto px-5 md:px-6 py-16 md:py-24 text-center">
         <motion.h2
-          className="font-display text-2xl sm:text-3xl md:text-5xl font-extrabold text-white max-w-3xl mx-auto leading-tight"
+          className="font-display text-[26px] leading-tight sm:text-3xl md:text-5xl font-extrabold text-white max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -26,7 +26,7 @@ const CTABanner = ({
           {headline}
         </motion.h2>
         <motion.p
-          className="mt-6 text-[15px] md:text-lg text-white/60 max-w-xl mx-auto"
+          className="mt-4 md:mt-6 text-base md:text-lg text-white/60 max-w-xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -35,6 +35,7 @@ const CTABanner = ({
           {subheadline}
         </motion.p>
         <motion.div
+          className="px-4 md:px-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,7 +43,7 @@ const CTABanner = ({
         >
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 mt-10 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 mt-8 md:mt-10 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors min-h-[52px]"
           >
             {buttonText} <ArrowRight className="w-4 h-4" />
           </Link>

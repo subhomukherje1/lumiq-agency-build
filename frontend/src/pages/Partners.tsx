@@ -211,10 +211,10 @@ const Partners = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 1 — HERO
       ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#0D0D1A] pt-32 pb-20">
-        <div className="container mx-auto px-6 max-w-4xl">
+      <section className="bg-[#0D0D1A] pt-24 md:pt-32 pb-12 md:pb-20">
+        <div className="container mx-auto px-5 md:px-6 max-w-4xl">
           <motion.span
-            className="inline-block text-accent-pink text-xs font-bold uppercase tracking-[0.2em] mb-6"
+            className="inline-block text-accent-pink text-xs font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] mb-4 md:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -224,7 +224,7 @@ const Partners = () => {
           </motion.span>
 
           <motion.h1
-            className="font-display text-[1.75rem] sm:text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-3xl"
+            className="font-display text-[28px] leading-[1.15] sm:text-4xl md:text-6xl font-extrabold text-white max-w-3xl"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
@@ -234,7 +234,7 @@ const Partners = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-8 text-lg text-white/50 max-w-[620px] leading-relaxed"
+            className="mt-5 md:mt-8 text-base md:text-lg text-white/50 max-w-[620px] leading-relaxed"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -248,14 +248,18 @@ const Partners = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 2 — FILTER BAR
       ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-8 border-b border-border sticky top-20 z-40">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap gap-3 justify-center" data-testid="filter-bar">
+      <section className="bg-white py-4 md:py-8 border-b border-border sticky top-16 md:top-20 z-40">
+        <div className="container mx-auto px-5 md:px-6">
+          <div 
+            className="flex gap-2 md:gap-3 md:justify-center overflow-x-auto pb-2 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 scrollbar-hide"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+            data-testid="filter-bar"
+          >
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap min-h-[44px] ${
                   activeFilter === cat
                     ? "bg-primary text-white"
                     : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
@@ -272,9 +276,9 @@ const Partners = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 3 — PARTNER CARDS GRID
       ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <section className="bg-white py-12 md:py-24">
+        <div className="container mx-auto px-5 md:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             <AnimatePresence mode="popLayout">
               {filteredPartners.map((partner) => (
                 <motion.div
@@ -327,27 +331,27 @@ const Partners = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           SECTION 4 — PARTNER CTA
       ═══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#0D0D1A] py-24 md:py-32">
-        <div className="container mx-auto px-6 text-center">
+      <section className="bg-[#0D0D1A] py-16 md:py-32">
+        <div className="container mx-auto px-5 md:px-6 text-center">
           <AnimatedSection>
-            <span className="text-sm font-bold text-accent-pink uppercase tracking-[0.15em]">
+            <span className="text-xs md:text-sm font-bold text-accent-pink uppercase tracking-[0.12em] md:tracking-[0.15em]">
               Work With Us
             </span>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl font-extrabold text-white leading-tight max-w-2xl mx-auto">
+            <h2 className="mt-3 md:mt-4 font-display text-[26px] leading-tight md:text-4xl font-extrabold text-white max-w-2xl mx-auto">
               Using one of these tools and want expert help getting the most from it?
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <p className="mt-6 text-lg text-white/50 max-w-[560px] mx-auto leading-relaxed">
+            <p className="mt-4 md:mt-6 text-base md:text-lg text-white/50 max-w-[560px] mx-auto leading-relaxed">
               We implement, integrate, and optimise these platforms in live B2B client environments every day. If you want to know how we'd apply any of them to your specific situation — start with a Revenue Teardown.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.3}>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 mt-10 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors text-base"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 mt-8 md:mt-10 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors text-base min-h-[52px]"
               data-testid="partners-cta-btn"
             >
               Request a Revenue Teardown <ArrowRight className="w-4 h-4" />
