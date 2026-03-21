@@ -1,0 +1,358 @@
+import { motion } from "framer-motion";
+import { Calendar, Search, MessageCircle, ArrowRight, Send, Loader2, Lock, Clock } from "lucide-react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import PageMeta from "@/components/PageMeta";
+import AnimatedSection from "@/components/AnimatedSection";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
+const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || "14155551234";
+const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL || "https://calendly.com";
+
+const contactCards = [
+  {
+    icon: Calendar,
+    title: "Book a call",
+    body: "30 minutes on Zoom. We review your site in advance so we come prepared with specific observations.",
+    buttonText: "Book on Calendly",
+    href: CALENDLY_URL,
+    external: true,
+    iconClass: "bg-primary/10 text-primary",
+  },
+  {
+    icon: Search,
+    title: "Request a free audit",
+    body: "Drop your URL below. We will send you a written findings report within 5 business days. No call required.",
+    buttonText: "Fill in the form below",
+    href: "#audit-form",
+    external: false,
+    iconClass: "bg-primary/10 text-primary",
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    body: "Prefer to message first? We are responsive on WhatsApp during business hours.",
+    buttonText: "Message on WhatsApp",
+    href: `https://wa.me/${WHATSAPP_NUMBER}`,
+    external: true,
+    iconClass: "bg-[#25D366]/10 text-[#25D366]",
+  },
+];
+
+const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    website: "",
+    email: "",
+    helpWith: "",
+    budget: "",
+    notes: "",
+  });
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          company: formData.company,
+          website: formData.website,
+          email: formData.email,
+          help_with: formData.helpWith,
+          budget: formData.budget,
+          notes: formData.notes,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const scrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <main className="bg-background">
+      <PageMeta title="Contact — Revium Labs" description="Book a call, request a free audit, or message us on WhatsApp. We review your site before any conversation." />
+      {/* ───── HERO ───── */}
+      <section className="bg-dark pt-32 pb-20">
+        <div className="container mx-auto px-6 text-center">
+          <motion.h1
+            className="font-display text-[1.75rem] sm:text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Let us find where your funnel is leaking.
+          </motion.h1>
+          <motion.p
+            className="mt-6 text-[15px] md:text-xl text-white/60 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            Book a call, request a free audit, or message us directly on WhatsApp.
+            We will review your site before any call so the conversation starts
+            with specifics — not introductions.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ───── CONTACT OPTIONS ───── */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            {contactCards.map((card, i) => (
+              <AnimatedSection key={card.title} delay={i * 0.1}>
+                <div className="rounded-2xl border border-border bg-card p-8 flex flex-col h-full">
+                  <div
+                    className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${card.iconClass}`}
+                  >
+                    <card.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                    {card.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed flex-1">
+                    {card.body}
+                  </p>
+                  {card.external ? (
+                    <a
+                      href={card.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                    >
+                      {card.buttonText} <ArrowRight className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <a
+                      href={card.href}
+                      onClick={scrollToForm}
+                      className="mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer"
+                    >
+                      {card.buttonText} <ArrowRight className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───── AUDIT FORM ───── */}
+      <section id="audit-form" className="bg-muted py-24">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground">
+              Request your free audit.
+            </h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              Tell us a little about your business and we will get back to you
+              within one business day.
+            </p>
+          </AnimatedSection>
+
+          {submitted ? (
+            <AnimatedSection>
+              <div className="rounded-2xl border border-primary/30 bg-primary/5 p-10 text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Send className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+                  Thank you
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Thank you — we have received your request and will be in touch
+                  within one business day.
+                </p>
+              </div>
+            </AnimatedSection>
+          ) : (
+            <AnimatedSection>
+              {error && (
+                <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 mb-5 text-center text-sm text-destructive">
+                  Something went wrong. Please email us directly at{" "}
+                  <a href="mailto:hello@reviumlabs.co" className="underline font-semibold">hello@reviumlabs.co</a>
+                </div>
+              )}
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-5 rounded-2xl border border-border bg-card p-8 md:p-10"
+              >
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-1.5">
+                      Your name *
+                    </label>
+                    <Input
+                      required
+                      maxLength={100}
+                      value={formData.name}
+                      onChange={(e) => handleChange("name", e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-1.5">
+                      Company name *
+                    </label>
+                    <Input
+                      required
+                      maxLength={100}
+                      value={formData.company}
+                      onChange={(e) => handleChange("company", e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                    Website URL *
+                  </label>
+                  <Input
+                    required
+                    type="url"
+                    maxLength={255}
+                    placeholder="https://yoursite.com"
+                    value={formData.website}
+                    onChange={(e) => handleChange("website", e.target.value)}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                    Work email *
+                  </label>
+                  <Input
+                    required
+                    type="email"
+                    maxLength={255}
+                    value={formData.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-1.5">
+                      What do you want help with? *
+                    </label>
+                    <Select
+                      required
+                      value={formData.helpWith}
+                      onValueChange={(v) => handleChange("helpWith", v)}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select an option" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="cro">CRO &amp; Experimentation</SelectItem>
+                        <SelectItem value="analytics">Analytics &amp; Attribution</SelectItem>
+                        <SelectItem value="paid">Performance Marketing</SelectItem>
+                        <SelectItem value="all">All three</SelectItem>
+                        <SelectItem value="unsure">Not sure yet</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-1.5">
+                      Monthly marketing budget
+                    </label>
+                    <Select
+                      value={formData.budget}
+                      onValueChange={(v) => handleChange("budget", v)}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a range" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="under5k">Under $5k</SelectItem>
+                        <SelectItem value="5k-15k">$5k – $15k</SelectItem>
+                        <SelectItem value="15k-50k">$15k – $50k</SelectItem>
+                        <SelectItem value="over50k">Over $50k</SelectItem>
+                        <SelectItem value="prefer-not">Prefer not to say</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">
+                    Anything else we should know?
+                  </label>
+                  <Textarea
+                    maxLength={1000}
+                    rows={4}
+                    value={formData.notes}
+                    onChange={(e) => handleChange("notes", e.target.value)}
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full h-12 text-base font-semibold"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    "Send my audit request"
+                  )}
+                </Button>
+
+                <div className="mt-6 space-y-3">
+                  <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                    <Lock className="w-4 h-4 shrink-0" /> Your information is never shared with third parties
+                  </p>
+                  <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                    <Clock className="w-4 h-4 shrink-0" /> We respond within one business day
+                  </p>
+                  <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                    <Calendar className="w-4 h-4 shrink-0" /> No commitment required to get your free audit
+                  </p>
+                </div>
+              </form>
+            </AnimatedSection>
+          )}
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Contact;
