@@ -4,10 +4,9 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
+  { label: "Paid Advertising", href: "/paid-advertising" },
   { label: "Conversion Rate Optimization", href: "/cro" },
   { label: "Analytics & Attribution", href: "/analytics" },
-  { label: "Performance Marketing", href: "/paid-media" },
-  { label: "Case Studies", href: "/case-studies" },
 ];
 
 const Navbar = () => {

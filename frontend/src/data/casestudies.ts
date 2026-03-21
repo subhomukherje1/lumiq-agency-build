@@ -34,12 +34,12 @@ export const caseStudies: CaseStudy[] = [
     companySize: "Series A — 45 employees",
     arr: "$4.2M ARR",
     slug: "/case-studies/workably-hr-tech",
-    tag: "CRO & Experimentation",
+    tag: "Conversion Rate Optimization",
     tagColor: "purple",
     heroStat: "127%",
     heroStatLabel: "increase in demo requests",
     duration: "4 months",
-    services: ["CRO & Experimentation", "Analytics & Attribution"],
+    services: ["Conversion Rate Optimization", "Analytics & Attribution"],
     challenge:
       "Workably had strong top-of-funnel traffic from LinkedIn ads but their demo request page was converting at just 1.8%. Their GA4 was missing over 40% of conversions due to ad blocker interference, meaning their team was making campaign decisions on data that was fundamentally wrong. The VP of Marketing knew something was broken but could not pinpoint where.",
     whatWeDid: [
@@ -75,7 +75,7 @@ export const caseStudies: CaseStudy[] = [
     heroStat: "3.4x",
     heroStatLabel: "return on LinkedIn ad spend",
     duration: "6 months",
-    services: ["Performance Marketing", "Analytics & Attribution", "CRO & Experimentation"],
+    services: ["Paid Advertising", "Analytics & Attribution", "Conversion Rate Optimization"],
     challenge:
       "Payvance was spending $35,000 per month on LinkedIn and Google Ads with no reliable way to connect ad spend to closed revenue. Their CRM (Salesforce) was completely disconnected from their ad platforms. The CFO was asking hard questions about marketing ROI and the Head of Growth had no credible answers. They also suspected their LinkedIn targeting was too broad — reaching HR managers instead of the CFOs and Finance Directors who actually make the buying decision.",
     whatWeDid: [
@@ -107,12 +107,12 @@ export const caseStudies: CaseStudy[] = [
     companySize: "Seed — 18 employees",
     arr: "$1.8M ARR",
     slug: "/case-studies/segmently-martech",
-    tag: "CRO & Analytics",
+    tag: "Conversion Rate Optimization",
     tagColor: "purple",
     heroStat: "71%",
     heroStatLabel: "lift in free trial signups",
     duration: "3 months",
-    services: ["CRO & Experimentation", "Analytics & Attribution"],
+    services: ["Conversion Rate Optimization", "Analytics & Attribution"],
     challenge:
       "Segmently had 8,000 monthly visitors from organic SEO but only 1.2% were signing up for a free trial. Their onboarding funnel had a massive drop-off between signup and first meaningful action — meaning even the users who did sign up were not activating. They had no heatmaps, no session recordings, and no way to know where people were dropping off. Their GA4 was set up by a developer who had since left the company and nobody was confident the data was accurate.",
     whatWeDid: [
@@ -144,12 +144,12 @@ export const caseStudies: CaseStudy[] = [
     companySize: "Series A — 32 employees",
     arr: "$3.1M ARR",
     slug: "/case-studies/counselflow-legaltech",
-    tag: "Performance Marketing",
+    tag: "Paid Advertising",
     tagColor: "pink",
     heroStat: "43",
     heroStatLabel: "qualified meetings in 60 days",
     duration: "5 months",
-    services: ["Performance Marketing", "CRO & Experimentation"],
+    services: ["Paid Advertising", "Conversion Rate Optimization"],
     challenge:
       "CounselFlow sells contract management software to General Counsels and Legal Operations teams at mid-market companies. They had tried Google Ads twice with two different agencies and burned through $40,000 with almost no pipeline to show for it. Their landing pages were sending all paid traffic to the homepage. Their LinkedIn ads were targeting anyone with Legal in their job title — paralegals, legal assistants, law students — instead of the actual buyers. They were ready to give up on paid media entirely.",
     whatWeDid: [

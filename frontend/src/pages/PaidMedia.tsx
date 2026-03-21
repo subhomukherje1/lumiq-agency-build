@@ -44,7 +44,7 @@ const aiCards = [
 
 const PaidMedia = () => (
   <div className="min-h-screen">
-    <PageMeta title="Performance Marketing — Revium Labs" description="LinkedIn ABM, Google Search, and retargeting built for B2B pipeline — not vanity clicks. We optimise for meetings and closed revenue." />
+    <PageMeta title="Paid Advertising — Revium Labs" description="LinkedIn ABM, Google Search, and retargeting built for B2B pipeline — not vanity clicks. We optimise for meetings and closed revenue." />
     {/* HERO */}
     <section className="relative bg-dark min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(272,77%,20%)_0%,transparent_60%)]" />
@@ -55,7 +55,7 @@ const PaidMedia = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Performance Marketing
+          Paid Advertising
         </motion.p>
         <motion.h1
           className="font-display text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white max-w-4xl leading-[1.1]"

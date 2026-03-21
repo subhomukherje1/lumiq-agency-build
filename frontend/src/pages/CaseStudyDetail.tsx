@@ -7,9 +7,9 @@ import PageMeta from "@/components/PageMeta";
 import { getCaseStudyBySlug, getAdjacentCaseStudies } from "@/data/casestudies";
 
 const serviceLinks: Record<string, string> = {
-  "CRO & Experimentation": "/cro",
+  "Conversion Rate Optimization": "/cro",
   "Analytics & Attribution": "/analytics",
-  "Performance Marketing": "/paid-media",
+  "Paid Advertising": "/paid-advertising",
 };
 
 const CaseStudyDetail = () => {

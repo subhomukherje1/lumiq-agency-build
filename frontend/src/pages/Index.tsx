@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, BarChart3, Database, Target, Brain, Eye, TrendingUp, Sparkles } from "lucide-react";
+import { ArrowRight, BarChart2, Database, Target, Brain, Eye, TrendingUp, Sparkles } from "lucide-react";
 import CountUp from "@/components/CountUp";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTABanner from "@/components/CTABanner";
@@ -9,22 +9,22 @@ import CaseStudiesPreview from "@/components/CaseStudiesPreview";
 
 const services = [
   {
-    icon: BarChart3,
-    title: "CRO & Experimentation",
-    description: "We find where your buyers drop off and rebuild those pages to convert. AI-assisted hypothesis generation. A/B tested every month.",
+    icon: Target,
+    title: "Paid Advertising",
+    description: "We run LinkedIn ABM and high-intent Google Search campaigns optimised entirely for qualified pipeline — not clicks, not impressions, not vanity metrics.",
+    href: "/paid-advertising",
+  },
+  {
+    icon: BarChart2,
+    title: "Conversion Rate Optimization",
+    description: "We use AI to find where your B2B buyers drop off and run rigorous A/B tests to convert more of your existing traffic into revenue — without increasing ad spend.",
     href: "/cro",
   },
   {
     icon: Database,
     title: "Analytics & Attribution",
-    description: "Clean GA4, server-side tracking, and AI-powered dashboards that show your CEO which channels actually close deals.",
+    description: "We fix your GA4, connect your CRM, and build executive dashboards that prove exactly which campaigns are generating closed revenue.",
     href: "/analytics",
-  },
-  {
-    icon: Target,
-    title: "Performance Marketing",
-    description: "LinkedIn ABM, high-intent Google Search, and retargeting — all optimised for qualified pipeline, not vanity clicks.",
-    href: "/paid-media",
   },
 ];
 
@@ -114,7 +114,7 @@ const Index = () => {
                 Get a free audit <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/cro"
+                to="/pricing"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white font-semibold hover:bg-white/5 transition-colors text-base"
               >
                 See how it works
@@ -179,7 +179,7 @@ const Index = () => {
           <AnimatedSection className="text-center mb-16">
             <span className="text-sm font-bold text-primary uppercase tracking-[0.15em]">What We Do</span>
             <h2 className="mt-4 font-display text-3xl md:text-5xl font-extrabold text-foreground leading-tight">
-              Three modules. One revenue system.
+              Three services. One revenue system.
             </h2>
           </AnimatedSection>
 

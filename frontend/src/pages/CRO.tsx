@@ -55,7 +55,7 @@ const checklist = [
 
 const CRO = () => (
   <div className="min-h-screen">
-    <PageMeta title="CRO & Experimentation — Revium Labs" description="AI-powered conversion rate optimisation for B2B SaaS. We find where buyers drop off and fix it — without increasing ad spend. Free audit available." />
+    <PageMeta title="Conversion Rate Optimization — Revium Labs" description="AI-powered conversion rate optimisation for B2B SaaS. We find where buyers drop off and fix it — without increasing ad spend. Free audit available." />
     {/* HERO */}
     <section className="relative bg-dark min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(272,77%,20%)_0%,transparent_60%)]" />
