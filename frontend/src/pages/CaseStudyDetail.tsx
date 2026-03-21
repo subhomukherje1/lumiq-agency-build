@@ -20,11 +20,29 @@ const CaseStudyDetail = () => {
 
   const { prev, next } = getAdjacentCaseStudies(cs.id);
 
+  // Article structured data for case study
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": `${cs.client} — ${cs.heroStat} ${cs.heroStatLabel}`,
+    "description": `See how Revium Labs helped ${cs.client} achieve ${cs.heroStat} ${cs.heroStatLabel} through ${cs.services.join(", ")}.`,
+    "author": {
+      "@type": "Organization",
+      "name": "Revium Labs"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Revium Labs",
+      "url": "https://reviumlabs.co"
+    }
+  };
+
   return (
     <>
       <PageMeta
         title={`${cs.client} Case Study — Revium Labs`}
         description={`${cs.heroStat} ${cs.heroStatLabel}. See how Revium Labs helped ${cs.client} achieve measurable results.`}
+        structuredData={articleSchema}
       />
 
       {/* Section 1 — Hero */}

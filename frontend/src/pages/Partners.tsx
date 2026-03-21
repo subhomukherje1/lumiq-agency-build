@@ -204,8 +204,9 @@ const Partners = () => {
   return (
     <div className="min-h-screen">
       <PageMeta
-        title="Tools & Partners — Revium Labs"
-        description="The analytics, CRO, paid media, and AI tools Revium Labs uses to build B2B revenue engines. 27 tools across 5 categories."
+        title="Tools & Technology Partners — Revium Labs"
+        description="The analytics, CRO, paid media, and AI tools Revium Labs uses to build B2B revenue engines — VWO, HubSpot, Salesforce, GA4, LinkedIn, and more."
+        keywords="VWO agency partner, HubSpot partner, GA4 implementation, B2B martech stack, CRO tools, marketing technology"
       />
 
       {/* ═══════════════════════════════════════════════════════════════════

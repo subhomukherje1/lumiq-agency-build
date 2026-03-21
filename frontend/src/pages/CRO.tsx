@@ -6,6 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import CountUp from "@/components/CountUp";
 import CTABanner from "@/components/CTABanner";
 import PageMeta from "@/components/PageMeta";
+import RelatedServices from "@/components/RelatedServices";
 
 const steps = [
   {
@@ -53,9 +54,28 @@ const checklist = [
   "Dedicated account manager — one point of contact",
 ];
 
+// Service structured data
+const croServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Conversion Rate Optimization for B2B SaaS",
+  "provider": {
+    "@type": "Organization",
+    "name": "Revium Labs"
+  },
+  "description": "AI-powered CRO for B2B companies — A/B testing, landing page optimization, and funnel analysis.",
+  "areaServed": ["US", "CA"],
+  "url": "https://reviumlabs.co/cro"
+};
+
 const CRO = () => (
   <div className="min-h-screen">
-    <PageMeta title="Conversion Rate Optimization — Revium Labs" description="AI-powered conversion rate optimisation for B2B SaaS. We find where buyers drop off and fix it — without increasing ad spend. Free audit available." />
+    <PageMeta 
+      title="Conversion Rate Optimization for B2B SaaS — Revium Labs" 
+      description="AI-powered CRO for B2B companies. We find where your buyers drop off and run data-backed A/B tests to convert more traffic into pipeline — without extra ad spend."
+      keywords="B2B conversion rate optimization, CRO agency, A/B testing B2B, VWO agency, landing page optimization, B2B CRO"
+      structuredData={croServiceSchema}
+    />
     {/* HERO */}
     <section className="relative bg-dark min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(272,77%,20%)_0%,transparent_60%)]" />
@@ -185,6 +205,9 @@ const CRO = () => (
         </div>
       </div>
     </section>
+
+    {/* Related Services */}
+    <RelatedServices currentService="cro" />
 
     {/* BOTTOM CTA */}
     <CTABanner

@@ -5,6 +5,7 @@ import HeroProofPoints from "@/components/HeroProofPoints";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTABanner from "@/components/CTABanner";
 import PageMeta from "@/components/PageMeta";
+import RelatedServices from "@/components/RelatedServices";
 
 const services = [
   {
@@ -42,9 +43,28 @@ const aiCards = [
   },
 ];
 
+// Service structured data
+const analyticsServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "B2B Analytics & Attribution",
+  "provider": {
+    "@type": "Organization",
+    "name": "Revium Labs"
+  },
+  "description": "Fix your GA4, connect your CRM, and build dashboards that prove marketing ROI. We implement server-side tracking and attribution for B2B SaaS companies.",
+  "areaServed": ["US", "CA"],
+  "url": "https://reviumlabs.co/analytics"
+};
+
 const Analytics = () => (
   <div className="min-h-screen">
-    <PageMeta title="Analytics & Attribution — Revium Labs" description="Fix your GA4, connect your CRM, and build dashboards that prove marketing ROI. B2B analytics and attribution done right." />
+    <PageMeta 
+      title="B2B Analytics & Attribution Agency — Revium Labs" 
+      description="Fix your GA4, connect your CRM, and build dashboards that prove marketing ROI. We implement server-side tracking and attribution for B2B SaaS companies in the US and Canada."
+      keywords="GA4 implementation agency, B2B marketing attribution, server-side tracking, HubSpot Salesforce integration, marketing ROI dashboard, B2B analytics agency"
+      structuredData={analyticsServiceSchema}
+    />
     {/* HERO */}
     <section className="relative bg-dark min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(272,77%,20%)_0%,transparent_60%)]" />
@@ -149,6 +169,9 @@ const Analytics = () => (
         </div>
       </div>
     </section>
+
+    {/* Related Services */}
+    <RelatedServices currentService="analytics" />
 
     {/* BOTTOM CTA */}
     <CTABanner

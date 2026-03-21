@@ -28,8 +28,9 @@ const CaseStudies = () => {
   return (
     <>
       <PageMeta
-        title="Case Studies — Revium Labs"
-        description="Real numbers from real B2B companies. Every result is from an actual client engagement."
+        title="B2B Marketing Case Studies & Results — Revium Labs"
+        description="Real results from real B2B clients. 127% increase in demo requests, 3.4x LinkedIn ROAS, 71% lift in free trial signups. See how Revium Labs builds revenue engines."
+        keywords="B2B CRO case studies, marketing results, conversion rate optimization results, B2B SaaS marketing results"
       />
 
       {/* Hero */}

@@ -5,6 +5,7 @@ import HeroProofPoints from "@/components/HeroProofPoints";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTABanner from "@/components/CTABanner";
 import PageMeta from "@/components/PageMeta";
+import RelatedServices from "@/components/RelatedServices";
 
 const services = [
   {
@@ -42,9 +43,28 @@ const aiCards = [
   },
 ];
 
+// Service structured data
+const paidMediaServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "B2B Paid Advertising — LinkedIn ABM & Google Ads",
+  "provider": {
+    "@type": "Organization",
+    "name": "Revium Labs"
+  },
+  "description": "LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimised entirely for qualified B2B pipeline — not clicks or impressions.",
+  "areaServed": ["US", "CA"],
+  "url": "https://reviumlabs.co/paid-advertising"
+};
+
 const PaidMedia = () => (
   <div className="min-h-screen">
-    <PageMeta title="Paid Advertising — Revium Labs" description="LinkedIn ABM, Google Search, and retargeting built for B2B pipeline — not vanity clicks. We optimise for meetings and closed revenue." />
+    <PageMeta 
+      title="B2B Paid Advertising Agency — LinkedIn ABM & Google Ads | Revium Labs" 
+      description="LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimised entirely for qualified B2B pipeline — not clicks or impressions."
+      keywords="B2B paid media agency, LinkedIn ABM agency, Google Ads B2B, account based marketing, B2B performance marketing, paid advertising SaaS"
+      structuredData={paidMediaServiceSchema}
+    />
     {/* HERO */}
     <section className="relative bg-dark min-h-[85vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(272,77%,20%)_0%,transparent_60%)]" />
@@ -140,6 +160,9 @@ const PaidMedia = () => (
         </div>
       </div>
     </section>
+
+    {/* Related Services */}
+    <RelatedServices currentService="paid-advertising" />
 
     {/* BOTTOM CTA */}
     <CTABanner

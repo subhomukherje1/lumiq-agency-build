@@ -95,8 +95,9 @@ const differentiators = [
 const OurModel = () => (
   <div className="min-h-screen">
     <PageMeta
-      title="Our Model — Revium Labs"
-      description="We don't run campaigns and hope for the best. We diagnose your pipeline leaks, fix the infrastructure, and scale the channels that close deals."
+      title="How We Build Your Revenue Engine — Revium Labs"
+      description="Our three-phase revenue optimization system — audit, fix the foundation, then scale. Every engagement starts with a free Revenue Teardown before any commitment is made."
+      keywords="B2B marketing agency model, revenue optimization, B2B growth agency, marketing audit, pipeline optimization"
     />
 
     {/* ═══════════════════════════════════════════════════════════════════

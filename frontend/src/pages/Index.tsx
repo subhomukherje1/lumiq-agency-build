@@ -58,10 +58,48 @@ const aiTiles = [
   },
 ];
 
+// Structured data for homepage
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Revium Labs",
+  "url": "https://reviumlabs.co",
+  "logo": "https://reviumlabs.co/logo.png",
+  "description": "AI-first B2B analytics, CRO, and performance marketing agency serving US and Canadian companies.",
+  "foundingDate": "2025",
+  "areaServed": ["US", "CA"],
+  "serviceType": [
+    "Conversion Rate Optimization",
+    "B2B Analytics",
+    "Performance Marketing",
+    "Marketing Attribution"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@reviumlabs.co",
+    "contactType": "customer service"
+  },
+  "sameAs": [
+    "https://linkedin.com/company/reviumlabs"
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Revium Labs",
+  "url": "https://reviumlabs.co"
+};
+
 const Index = () => {
   return (
     <>
-      <PageMeta title="Revium Labs — B2B Analytics, CRO & AI-Powered Growth" description="Revium Labs helps B2B SaaS companies fix broken tracking, run AI-assisted A/B tests, and generate provable pipeline." ogImage="/og-home.png" />
+      <PageMeta 
+        title="Revium Labs — B2B Analytics, CRO & AI-Powered Revenue Growth" 
+        description="Revium Labs helps B2B SaaS companies fix broken tracking, run AI-assisted A/B tests, and build the revenue engine that turns ad spend into provable pipeline."
+        keywords="B2B CRO agency, B2B analytics agency, revenue optimization, GA4 implementation, LinkedIn ABM, B2B SaaS marketing agency, conversion rate optimization B2B"
+        structuredData={[organizationSchema, websiteSchema]}
+      />
       {/* ===================== SECTION 1 — HERO ===================== */}
       <section className="relative bg-dark min-h-screen flex items-center overflow-hidden">
         {/* Gradient orbs - hidden on mobile to prevent overflow */}

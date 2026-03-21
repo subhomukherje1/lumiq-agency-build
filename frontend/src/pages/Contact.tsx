@@ -102,9 +102,54 @@ const Contact = () => {
     document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
+// FAQ structured data for Contact page
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you require long-term contracts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work on 3-month initial engagements. After that it is month-to-month with 30 days notice to cancel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is your team based?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are based in India, serving US and Canadian B2B companies. All communication is in English during US business hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can we get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Revenue Teardown audit takes 3 to 5 business days. Paid engagements kick off within one week of agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the Revenue Teardown include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A written audit of your GA4 tracking setup, landing pages, or ad account — delivered within 5 business days with a prioritized list of fixes. No call required."
+      }
+    }
+  ]
+};
+
   return (
     <main className="bg-background">
-      <PageMeta title="Contact — Revium Labs" description="Book a call, request a free audit, or message us on WhatsApp. We review your site before any conversation." />
+      <PageMeta 
+        title="Request a Revenue Teardown — Revium Labs" 
+        description="Request a free Revenue Teardown — we audit your tracking, landing pages, or ad account and deliver written findings within 5 business days. No commitment required."
+        keywords="B2B marketing audit, free CRO audit, GA4 audit, marketing agency contact, revenue teardown"
+        structuredData={faqSchema}
+      />
       {/* ───── HERO ───── */}
       <section className="bg-dark pt-24 md:pt-32 pb-12 md:pb-20">
         <div className="container mx-auto px-5 md:px-6 text-center">
@@ -114,7 +159,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Let us find where your funnel is leaking.
+            Request your Revenue Teardown.
           </motion.h1>
           <motion.p
             className="mt-4 md:mt-6 text-base md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
