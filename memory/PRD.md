@@ -149,6 +149,20 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 - 48px diameter on mobile (was 56px)
 - Positioned higher (bottom-20) to avoid iOS Safari bar
 
+### December 2025 - Final Copy Updates
+
+**Homepage CTA Update:**
+- Hero button: "Get a free audit" → "Request a Revenue Teardown"
+- Consistent with navbar CTA terminology
+
+**CRO Page Copy Update:**
+- Step 03: "Using VWO, we generate and test hypotheses every month" → "Using tools like VWO, Optimizely and others, we generate and test hypotheses every month"
+- Removed platform-specific lock-in, more inclusive of tool stack
+
+**Developer Documentation Created:**
+- `/app/frontend/DEVELOPER_NOTES.md` - Comprehensive pre-launch checklist
+- Covers: Asset replacements, Calendly/EmailJS setup, GA4, SEO verification, DNS, testing
+
 ### January 2026 - SEO Optimization Pass
 
 **Meta Tags (all pages):**
@@ -190,24 +204,27 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 
 ## Backlog / Next Steps
 
+> **See `/app/frontend/DEVELOPER_NOTES.md` for detailed implementation instructions**
+
 ### P0 (Critical Before Launch)
 - [ ] Replace placeholder OG image with actual 1200x630 branded image
-- [ ] Update GA4_MEASUREMENT_ID with real tracking ID
-- [ ] Update Calendly URL environment variable
-- [ ] Update WhatsApp number environment variable
+- [ ] Update GA4 Measurement ID in `/app/frontend/index.html`
+- [ ] Update Calendly URL in `.env` with real scheduling link
 - [ ] Replace placeholder client logos on homepage
+- [ ] Replace placeholder partner tool logos on Partners page
 
 ### P1 (High Priority)
-- [ ] Create EmailJS template for contact form
-- [ ] Add production robots.txt
-- [ ] Performance optimization audit
+- [ ] Create EmailJS account and configure contact form
+- [ ] Submit sitemap to Google Search Console
+- [ ] Verify structured data with Google Rich Results Test
+- [ ] Performance optimization audit (Lighthouse)
 - [ ] Accessibility audit (WCAG 2.1)
 
 ### P2 (Nice to Have)
 - [ ] Add blog/resources section
 - [ ] Implement case study filtering
 - [ ] Add testimonials carousel
-- [ ] Dark mode toggle
+- [ ] Privacy Policy & Terms of Service pages
 
 ## Files Modified This Session
 - `/app/frontend/index.html`

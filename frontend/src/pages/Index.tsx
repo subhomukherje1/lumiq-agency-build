@@ -150,7 +150,7 @@ const Index = () => {
                 to="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors text-base min-h-[52px]"
               >
-                Get a free audit <ArrowRight className="w-4 h-4" />
+                Request a Revenue Teardown <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/pricing"

@@ -22,7 +22,7 @@ const steps = [
   {
     num: "03",
     title: "Continuous A/B Testing",
-    body: "Using VWO, we generate and test hypotheses every month. AI helps us prioritise which tests to run first based on predicted impact.",
+    body: "Using tools like VWO, Optimizely and others, we generate and test hypotheses every month. AI helps us prioritise which tests to run first based on predicted impact.",
   },
 ];
 
