@@ -178,6 +178,14 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 - Updated data model: replaced `quote`, `quoteName`, `quoteTitle` with `description`
 - Added company descriptions for each case study
 
+**About Revium Labs Section Added (Our Model Page):**
+- New section between "Why This Is Different" and final CTA
+- Two-column layout: heading left, content right
+- Clean white background for visual break from dark sections
+- Heading: "Built for one thing: revenue."
+- Body text emphasizing lean, specialized team approach
+- Three subtle bullet highlights: Lean senior-led execution, No bloated teams, Revenue-focused
+
 ### January 2026 - SEO Optimization Pass
 
 **Meta Tags (all pages):**

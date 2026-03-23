@@ -400,7 +400,69 @@ const OurModel = () => (
     </section>
 
     {/* ═══════════════════════════════════════════════════════════════════
-        SECTION 6 — BOTTOM CTA
+        SECTION 6 — ABOUT REVIUM LABS
+    ═══════════════════════════════════════════════════════════════════ */}
+    <section className="bg-white py-16 md:py-28">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+            {/* Left Column - Heading */}
+            <div className="md:col-span-4">
+              <AnimatedSection>
+                <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-[0.12em] md:tracking-[0.15em]">
+                  About Revium Labs
+                </span>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <h2 className="mt-3 md:mt-4 font-display text-[24px] leading-tight md:text-3xl font-extrabold text-foreground">
+                  Built for one thing: revenue.
+                </h2>
+              </AnimatedSection>
+            </div>
+
+            {/* Right Column - Content */}
+            <div className="md:col-span-8">
+              <AnimatedSection delay={0.2}>
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  Revium Labs is built for one thing: improving revenue.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <p className="mt-4 md:mt-5 text-sm md:text-base text-muted-foreground leading-relaxed">
+                  Unlike traditional agencies, we operate as a lean, specialized team focused on your growth. Each engagement combines expertise across paid acquisition, conversion optimization, and tracking — so every decision is tied to actual revenue, not vanity metrics.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.4}>
+                <p className="mt-4 md:mt-5 text-sm md:text-base text-foreground font-medium leading-relaxed">
+                  The goal is simple: identify leaks, fix them, and scale what works.
+                </p>
+              </AnimatedSection>
+
+              {/* Highlights */}
+              <AnimatedSection delay={0.5}>
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-sm text-muted-foreground">Lean, senior-led execution</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-sm text-muted-foreground">No bloated teams or unnecessary layers</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-sm text-muted-foreground">Focused entirely on revenue outcomes</span>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ═══════════════════════════════════════════════════════════════════
+        SECTION 7 — BOTTOM CTA
     ═══════════════════════════════════════════════════════════════════ */}
     <section className="bg-[#0D0D1A] py-16 md:py-32">
       <div className="container mx-auto px-5 md:px-6 text-center">
