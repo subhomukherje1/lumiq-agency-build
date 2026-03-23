@@ -12,7 +12,7 @@ interface Service {
 const allServices: Service[] = [
   {
     title: "Paid Advertising",
-    description: "LinkedIn ABM and high-intent Google Search campaigns optimised for qualified pipeline.",
+    description: "LinkedIn ABM and high-intent Google Search campaigns optimized for qualified pipeline.",
     href: "/paid-advertising",
     icon: Target,
   },

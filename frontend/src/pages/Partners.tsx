@@ -346,7 +346,7 @@ const Partners = () => {
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
             <p className="mt-4 md:mt-6 text-base md:text-lg text-white/50 max-w-[560px] mx-auto leading-relaxed">
-              We implement, integrate, and optimise these platforms in live B2B client environments every day. If you want to know how we'd apply any of them to your specific situation — start with a Revenue Teardown.
+              We implement, integrate, and optimize these platforms in live B2B client environments every day. If you want to know how we'd apply any of them to your specific situation — start with a Revenue Teardown.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.3}>

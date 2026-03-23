@@ -34,7 +34,7 @@ const aiCards = [
   {
     icon: TrendingUp,
     title: "Predictive Attribution Modelling",
-    body: "AI models that analyse your historical conversion data and predict which campaigns and channels will generate the most pipeline in the next 90 days.",
+    body: "AI models that analyze your historical conversion data and predict which campaigns and channels will generate the most pipeline in the next 90 days.",
   },
   {
     icon: ShieldAlert,
@@ -92,7 +92,7 @@ const Analytics = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Most B2B marketing teams are optimising based on GA4 data that is 30 to 40 percent inaccurate. Ad blockers, misconfigured tags, and disconnected CRMs mean your attribution is fiction. We fix the source — so every report you run is actually true.
+          Most B2B marketing teams are optimizing based on GA4 data that is 30 to 40 percent inaccurate. Ad blockers, misconfigured tags, and disconnected CRMs mean your attribution is fiction. We fix the source — so every report you run is actually true.
         </motion.p>
         <motion.div
           className="mt-10"

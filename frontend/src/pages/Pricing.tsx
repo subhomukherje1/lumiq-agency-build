@@ -37,7 +37,7 @@ const phases = [
     number: "Phase 3",
     title: "Managed Growth & Scale",
     subtitle: "The Engine",
-    body: "Once the foundation is solid, we turn on the traffic and multiply the conversions. We run continuous high-velocity experiments alongside high-intent performance marketing — optimised entirely for qualified pipeline and closed revenue, not vanity metrics.",
+    body: "Once the foundation is solid, we turn on the traffic and multiply the conversions. We run continuous high-velocity experiments alongside high-intent performance marketing — optimized entirely for qualified pipeline and closed revenue, not vanity metrics.",
     deliverables: [
       "Continuous CRO & multivariate A/B testing",
       "LinkedIn ABM & high-intent Google Search",
@@ -285,7 +285,7 @@ const OurModel = () => (
               </AnimatedSection>
               <AnimatedSection delay={0.5}>
                 <p className="text-sm md:text-base text-foreground leading-relaxed">
-                  Once Phases 1 and 2 are done, Phase 3 is where the compounding begins. Clean data feeding into high-intent campaigns, optimised by continuous A/B testing, reported through dashboards your CEO actually trusts. That is the revenue engine.
+                  Once Phases 1 and 2 are done, Phase 3 is where the compounding begins. Clean data feeding into high-intent campaigns, optimized by continuous A/B testing, reported through dashboards your CEO actually trusts. That is the revenue engine.
                 </p>
               </AnimatedSection>
             </div>

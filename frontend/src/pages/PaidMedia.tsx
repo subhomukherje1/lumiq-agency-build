@@ -21,7 +21,7 @@ const services = [
   {
     icon: RefreshCw,
     title: "Full-Funnel Retargeting",
-    body: "Keeping your brand in front of visitors who showed intent but did not book. Segmented by behaviour — demo page viewers, pricing page visitors, blog readers.",
+    body: "Keeping your brand in front of visitors who showed intent but did not book. Segmented by behavior — demo page viewers, pricing page visitors, blog readers.",
   },
 ];
 
@@ -29,11 +29,11 @@ const aiCards = [
   {
     icon: Users,
     title: "AI Audience Building",
-    body: "We use AI to analyse your existing customer data and build lookalike and intent-based audiences that match your highest-value closed-won accounts.",
+    body: "We use AI to analyze your existing customer data and build lookalike and intent-based audiences that match your highest-value closed-won accounts.",
   },
   {
     icon: TrendingUp,
-    title: "Predictive Bid Optimisation",
+    title: "Predictive Bid Optimization",
     body: "AI-assisted bidding models that predict which clicks are most likely to convert into qualified meetings — and adjust bids accordingly in real time.",
   },
   {
@@ -52,7 +52,7 @@ const paidMediaServiceSchema = {
     "@type": "Organization",
     "name": "Revium Labs"
   },
-  "description": "LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimised entirely for qualified B2B pipeline — not clicks or impressions.",
+  "description": "LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimized entirely for qualified B2B pipeline — not clicks or impressions.",
   "areaServed": ["US", "CA"],
   "url": "https://reviumlabs.co/paid-advertising"
 };
@@ -61,7 +61,7 @@ const PaidMedia = () => (
   <div className="min-h-screen">
     <PageMeta 
       title="B2B Paid Advertising Agency — LinkedIn ABM & Google Ads | Revium Labs" 
-      description="LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimised entirely for qualified B2B pipeline — not clicks or impressions."
+      description="LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimized entirely for qualified B2B pipeline — not clicks or impressions."
       keywords="B2B paid media agency, LinkedIn ABM agency, Google Ads B2B, account based marketing, B2B performance marketing, paid advertising SaaS"
       structuredData={paidMediaServiceSchema}
     />
@@ -83,9 +83,9 @@ const PaidMedia = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          We do not optimise for clicks.{" "}
+          We do not optimize for clicks.{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-pink">
-            We optimise for signed contracts.
+            We optimize for signed contracts.
           </span>
         </motion.h1>
         <motion.p

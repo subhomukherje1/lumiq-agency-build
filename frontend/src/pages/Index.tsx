@@ -11,7 +11,7 @@ const services = [
   {
     icon: Target,
     title: "Paid Advertising",
-    description: "We run LinkedIn ABM and high-intent Google Search campaigns optimised entirely for qualified pipeline — not clicks, not impressions, not vanity metrics.",
+    description: "We run LinkedIn ABM and high-intent Google Search campaigns optimized entirely for qualified pipeline — not clicks, not impressions, not vanity metrics.",
     href: "/paid-advertising",
   },
   {
@@ -54,7 +54,7 @@ const aiTiles = [
   {
     icon: Sparkles,
     title: "AI-Powered Personalisation",
-    description: "Show different page variants to different buyer segments automatically, using behavioural signals.",
+    description: "Show different page variants to different buyer segments automatically, using behavioral signals.",
   },
 ];
 
@@ -253,7 +253,7 @@ const Index = () => {
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <p className="mt-4 md:mt-6 text-base md:text-lg text-white/45 leading-relaxed">
-                Most agencies run the same playbook on every client. Revium Labs uses AI to analyse your funnel, generate test hypotheses, predict which experiments will move the needle, and surface attribution insights that manual analysis would take weeks to find.
+                Most agencies run the same playbook on every client. Revium Labs uses AI to analyze your funnel, generate test hypotheses, predict which experiments will move the needle, and surface attribution insights that manual analysis would take weeks to find.
               </p>
             </AnimatedSection>
           </div>

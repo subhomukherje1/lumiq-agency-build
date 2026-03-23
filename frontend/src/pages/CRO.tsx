@@ -40,7 +40,7 @@ const aiCards = [
   {
     icon: Users,
     title: "AI Personalisation",
-    body: "Using VWO's personalisation engine, we serve different page variants to different buyer segments automatically based on their behaviour.",
+    body: "Using VWO's personalization engine, we serve different page variants to different buyer segments automatically based on their behavior.",
   },
 ];
 
@@ -48,7 +48,7 @@ const checklist = [
   "Monthly testing roadmap with AI-prioritised hypotheses",
   "Weekly status reports on active tests",
   "Winning variant implementation handled by our team",
-  "Heatmaps, session recordings, and behavioural analysis",
+  "Heatmaps, session recordings, and behavioral analysis",
   "Landing page design and development (1 per month)",
   "LLM visibility audit included at onboarding",
   "Dedicated account manager — one point of contact",
