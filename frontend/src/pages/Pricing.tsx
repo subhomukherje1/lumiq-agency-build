@@ -138,7 +138,84 @@ const OurModel = () => (
     </section>
 
     {/* ═══════════════════════════════════════════════════════════════════
-        SECTION 2 — PHASE CARDS
+        SECTION 2 — ABOUT REVIUM LABS
+    ═══════════════════════════════════════════════════════════════════ */}
+    <section className="bg-[#FAFAFA] py-14 md:py-24">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+            {/* Left Column - Heading */}
+            <div className="md:col-span-4">
+              <AnimatedSection>
+                <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-[0.12em] md:tracking-[0.15em]">
+                  About Revium Labs
+                </span>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <h2 className="mt-3 md:mt-4 font-display text-[24px] leading-tight md:text-3xl font-extrabold text-foreground">
+                  Built for one thing: revenue.
+                </h2>
+              </AnimatedSection>
+            </div>
+
+            {/* Right Column - Content */}
+            <div className="md:col-span-8">
+              <AnimatedSection delay={0.2}>
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  Revium Labs is built for one thing: improving your revenue.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <p className="mt-4 md:mt-5 text-sm md:text-base text-muted-foreground leading-relaxed">
+                  Unlike traditional agencies, we operate as a lean, specialized team focused on your growth. Each engagement combines expertise across paid acquisition, conversion optimization, and tracking — so every decision is tied to actual revenue, not vanity metrics.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.4}>
+                <p className="mt-4 md:mt-5 text-sm md:text-base text-foreground font-medium leading-relaxed">
+                  The goal is simple: identify leaks, fix them, and scale what works.
+                </p>
+              </AnimatedSection>
+
+              {/* Highlights */}
+              <AnimatedSection delay={0.5}>
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-sm text-muted-foreground">Lean, senior-led execution</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-sm text-muted-foreground">No bloated teams or unnecessary layers</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-sm text-muted-foreground">Focused entirely on revenue outcomes</span>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* LinkedIn Trust Signal */}
+              <AnimatedSection delay={0.6}>
+                <a 
+                  href="https://linkedin.com/company/reviumlabs" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mt-6 md:mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  Connect with us on LinkedIn
+                </a>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ═══════════════════════════════════════════════════════════════════
+        SECTION 3 — PHASE CARDS
     ═══════════════════════════════════════════════════════════════════ */}
     <section className="bg-white py-16 md:py-32">
       <div className="container mx-auto px-5 md:px-6">
@@ -216,7 +293,7 @@ const OurModel = () => (
     </section>
 
     {/* ═══════════════════════════════════════════════════════════════════
-        SECTION 3 — WHY THIS ORDER MATTERS
+        SECTION 4 — WHY THIS ORDER MATTERS
     ═══════════════════════════════════════════════════════════════════ */}
     <section className="bg-muted py-16 md:py-32">
       <div className="container mx-auto px-5 md:px-6">
@@ -295,7 +372,7 @@ const OurModel = () => (
     </section>
 
     {/* ═══════════════════════════════════════════════════════════════════
-        SECTION 4 — HOW EVERY ENGAGEMENT STARTS
+        SECTION 5 — HOW EVERY ENGAGEMENT STARTS
     ═══════════════════════════════════════════════════════════════════ */}
     <section className="bg-white py-16 md:py-32">
       <div className="container mx-auto px-5 md:px-6">
@@ -358,7 +435,7 @@ const OurModel = () => (
     </section>
 
     {/* ═══════════════════════════════════════════════════════════════════
-        SECTION 5 — WHAT MAKES THIS DIFFERENT
+        SECTION 6 — WHAT MAKES THIS DIFFERENT
     ═══════════════════════════════════════════════════════════════════ */}
     <section className="bg-[#1D0632] py-16 md:py-32">
       <div className="container mx-auto px-5 md:px-6">
@@ -395,68 +472,6 @@ const OurModel = () => (
               </div>
             </AnimatedSection>
           ))}
-        </div>
-      </div>
-    </section>
-
-    {/* ═══════════════════════════════════════════════════════════════════
-        SECTION 6 — ABOUT REVIUM LABS
-    ═══════════════════════════════════════════════════════════════════ */}
-    <section className="bg-white py-16 md:py-28">
-      <div className="container mx-auto px-5 md:px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
-            {/* Left Column - Heading */}
-            <div className="md:col-span-4">
-              <AnimatedSection>
-                <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-[0.12em] md:tracking-[0.15em]">
-                  About Revium Labs
-                </span>
-              </AnimatedSection>
-              <AnimatedSection delay={0.1}>
-                <h2 className="mt-3 md:mt-4 font-display text-[24px] leading-tight md:text-3xl font-extrabold text-foreground">
-                  Built for one thing: revenue.
-                </h2>
-              </AnimatedSection>
-            </div>
-
-            {/* Right Column - Content */}
-            <div className="md:col-span-8">
-              <AnimatedSection delay={0.2}>
-                <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  Revium Labs is built for one thing: improving revenue.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <p className="mt-4 md:mt-5 text-sm md:text-base text-muted-foreground leading-relaxed">
-                  Unlike traditional agencies, we operate as a lean, specialized team focused on your growth. Each engagement combines expertise across paid acquisition, conversion optimization, and tracking — so every decision is tied to actual revenue, not vanity metrics.
-                </p>
-              </AnimatedSection>
-              <AnimatedSection delay={0.4}>
-                <p className="mt-4 md:mt-5 text-sm md:text-base text-foreground font-medium leading-relaxed">
-                  The goal is simple: identify leaks, fix them, and scale what works.
-                </p>
-              </AnimatedSection>
-
-              {/* Highlights */}
-              <AnimatedSection delay={0.5}>
-                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 sm:gap-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span className="text-sm text-muted-foreground">Lean, senior-led execution</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span className="text-sm text-muted-foreground">No bloated teams or unnecessary layers</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span className="text-sm text-muted-foreground">Focused entirely on revenue outcomes</span>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
         </div>
       </div>
     </section>
