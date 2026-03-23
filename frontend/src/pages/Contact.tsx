@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, Search, MessageCircle, ArrowRight, Send, Loader2, Lock, Clock } from "lucide-react";
+import { Calendar, Search, ArrowRight, Send, Loader2, Lock, Clock } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import PageMeta from "@/components/PageMeta";
@@ -18,7 +18,6 @@ import {
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
-const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || "14155551234";
 const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL || "https://calendly.com";
 
 const contactCards = [
@@ -33,21 +32,12 @@ const contactCards = [
   },
   {
     icon: Search,
-    title: "Request a free audit",
+    title: "Request a Revenue Teardown",
     body: "Drop your URL below. We will send you a written findings report within 5 business days. No call required.",
     buttonText: "Fill in the form below",
     href: "#audit-form",
     external: false,
     iconClass: "bg-primary/10 text-primary",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    body: "Prefer to message first? We are responsive on WhatsApp during business hours.",
-    buttonText: "Message on WhatsApp",
-    href: `https://wa.me/${WHATSAPP_NUMBER}`,
-    external: true,
-    iconClass: "bg-[#25D366]/10 text-[#25D366]",
   },
 ];
 
@@ -167,7 +157,7 @@ const faqSchema = {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            Book a call, request a free audit, or message us directly on WhatsApp.
+            Book a call or request a free Revenue Teardown.
             We will review your site before any call so the conversation starts
             with specifics — not introductions.
           </motion.p>
@@ -177,7 +167,7 @@ const faqSchema = {
       {/* ───── CONTACT OPTIONS ───── */}
       <section className="py-12 md:py-24">
         <div className="container mx-auto px-5 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-3xl mx-auto">
             {contactCards.map((card, i) => (
               <AnimatedSection key={card.title} delay={i * 0.1}>
                 <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col h-full">

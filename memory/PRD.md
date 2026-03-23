@@ -161,7 +161,22 @@ Lovable-exported React/Vite/Tailwind frontend for MarTech agency Lumiq. User req
 
 **Developer Documentation Created:**
 - `/app/frontend/DEVELOPER_NOTES.md` - Comprehensive pre-launch checklist
-- Covers: Asset replacements, Calendly/EmailJS setup, GA4, SEO verification, DNS, testing
+- Covers: Asset replacements, Calendly/EmailJS setup, GA4, SEO, and testing
+
+**Contact Page Updates:**
+- Removed WhatsApp tile - now only 2 contact options
+- Updated subtitle: "Book a call or request a free Revenue Teardown"
+- Changed grid from 3-col to 2-col centered layout
+- Renamed "Request a free audit" → "Request a Revenue Teardown"
+
+**Case Studies Rebranding:**
+- Workably (HR Tech SaaS, SF) → **Aragorn AI** (HRTech SaaS, Austin TX)
+- Payvance (B2B Fintech, NY) → **April** (B2B Fintech, New York NY)
+- Segmently (MarTech SaaS, Austin) → **BirdseyePost** (MarTech SaaS, Toronto Canada)
+- CounselFlow (Legal Tech, Chicago) → **FirmPilot** (Legal Tech SaaS, Miami FL)
+- Removed quote/testimonial section from all case study detail pages
+- Updated data model: replaced `quote`, `quoteName`, `quoteTitle` with `description`
+- Added company descriptions for each case study
 
 ### January 2026 - SEO Optimization Pass
 

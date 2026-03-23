@@ -20,20 +20,18 @@ export interface CaseStudy {
   challenge: string;
   whatWeDid: string[];
   results: CaseStudyResult[];
-  quote: string;
-  quoteName: string;
-  quoteTitle: string;
+  description: string;
 }
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "saas-hr-tech",
-    client: "Workably",
-    industry: "HR Tech SaaS",
-    location: "San Francisco, CA",
+    id: "hrtech-saas",
+    client: "Aragorn AI",
+    industry: "HRTech SaaS",
+    location: "Austin, TX",
     companySize: "Series A — 45 employees",
     arr: "$4.2M ARR",
-    slug: "/case-studies/workably-hr-tech",
+    slug: "/case-studies/aragorn-ai-hrtech",
     tag: "Conversion Rate Optimization",
     tagColor: "purple",
     heroStat: "127%",
@@ -41,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
     duration: "4 months",
     services: ["Conversion Rate Optimization", "Analytics & Attribution"],
     challenge:
-      "Workably had strong top-of-funnel traffic from LinkedIn ads but their demo request page was converting at just 1.8% — well below the 3-5% B2B SaaS industry benchmark. Their GA4 was missing over 40% of conversions due to ad blocker interference, meaning their team was making campaign decisions on data that was fundamentally wrong. The VP of Marketing knew something was broken but could not pinpoint where.",
+      "Aragorn AI had strong top-of-funnel traffic from LinkedIn ads but their demo request page was converting at just 1.8% — well below the 3-5% B2B SaaS industry benchmark. Their GA4 was missing over 40% of conversions due to ad blocker interference, meaning their team was making campaign decisions on data that was fundamentally wrong. The VP of Marketing knew something was broken but could not pinpoint where.",
     whatWeDid: [
       "Fixed server-side tracking via GA4 and LinkedIn Conversion API — recovering 38% of previously untracked conversions",
       "Rebuilt the demo request page with a new headline, simplified form (from 7 fields to 4), and social proof from recognizable Fortune 500 logos",
@@ -57,19 +55,16 @@ export const caseStudies: CaseStudy[] = [
       { stat: "22%", label: "reduction in bounce rate" },
       { stat: "4 months", label: "to full results" },
     ],
-    quote:
-      "We knew our tracking was broken but had no idea how broken. Revium Labs fixed it in week one and suddenly our LinkedIn campaigns looked completely different — in a good way. The demo page rebuild alone paid for six months of their retainer.",
-    quoteName: "Sarah Chen",
-    quoteTitle: "VP Marketing, Workably",
+    description: "Based in the Texas tech corridor, Aragorn AI is a rapidly growing HRTech and People Operations platform.",
   },
   {
     id: "fintech-b2b-payments",
-    client: "Payvance",
+    client: "April",
     industry: "B2B Fintech",
     location: "New York, NY",
     companySize: "Series B — 120 employees",
     arr: "$11M ARR",
-    slug: "/case-studies/payvance-fintech",
+    slug: "/case-studies/april-fintech",
     tag: "Full-Stack",
     tagColor: "pink",
     heroStat: "3.4x",
@@ -77,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     duration: "6 months",
     services: ["Paid Advertising", "Analytics & Attribution", "Conversion Rate Optimization"],
     challenge:
-      "Payvance was spending $35,000/month on LinkedIn and Google Ads with no reliable way to connect ad spend to closed revenue. Their CRM (Salesforce) was completely disconnected from their ad platforms. The CFO was asking hard questions about marketing ROI — typical for Series B fintech companies under board pressure — and the Head of Growth had no credible answers. They also suspected their LinkedIn targeting was too broad — reaching HR managers instead of the CFOs and Finance Directors who actually sign $50K+ contracts.",
+      "April was spending $35,000/month on LinkedIn and Google Ads with no reliable way to connect ad spend to closed revenue. Their CRM (Salesforce) was completely disconnected from their ad platforms. The CFO was asking hard questions about marketing ROI — typical for Series B fintech companies under board pressure — and the Head of Growth had no credible answers. They also suspected their LinkedIn targeting was too broad — reaching HR managers instead of the CFOs and Finance Directors who actually sign $50K+ contracts.",
     whatWeDid: [
       "Connected Salesforce to LinkedIn and Google via server-side integration — creating a closed-loop attribution model from first ad click to closed-won revenue",
       "Rebuilt LinkedIn campaign structure with tight ICP targeting: CFOs and Finance Directors at companies with 100–500 employees in manufacturing, logistics, and retail across the US and Canada",
@@ -94,19 +89,16 @@ export const caseStudies: CaseStudy[] = [
       { stat: "$340K", label: "pipeline from 2 enterprise deals closed" },
       { stat: "6 months", label: "to full results" },
     ],
-    quote:
-      "For the first time in two years I could walk into a board meeting and show exactly which campaigns generated which revenue. That clarity alone was worth more than anything else. The fact that we also halved our cost per meeting was a bonus.",
-    quoteName: "Marcus Webb",
-    quoteTitle: "Head of Growth, Payvance",
+    description: "April is a New York-based embedded tax platform. They provide APIs that allow other fintechs and HR platforms to embed tax filing directly into their software.",
   },
   {
     id: "martech-saas",
-    client: "Segmently",
+    client: "BirdseyePost",
     industry: "MarTech SaaS",
-    location: "Austin, TX",
+    location: "Toronto, Canada",
     companySize: "Seed — 18 employees",
     arr: "$1.8M ARR",
-    slug: "/case-studies/segmently-martech",
+    slug: "/case-studies/birdseyepost-martech",
     tag: "Conversion Rate Optimization",
     tagColor: "purple",
     heroStat: "71%",
@@ -114,7 +106,7 @@ export const caseStudies: CaseStudy[] = [
     duration: "3 months",
     services: ["Conversion Rate Optimization", "Analytics & Attribution"],
     challenge:
-      "Segmently had 8,000 monthly visitors from organic SEO but only 1.2% were signing up for a free trial — significantly below the 2-3% benchmark for PLG SaaS companies. Their onboarding funnel had a massive drop-off between signup and first meaningful action — meaning even the users who did sign up were not activating. They had no heatmaps, no session recordings, and no way to know where people were dropping off. Their GA4 was set up by a developer who had since left the company and nobody was confident the data was accurate.",
+      "BirdseyePost had 8,000 monthly visitors from organic SEO but only 1.2% were signing up for a free trial — significantly below the 2-3% benchmark for PLG SaaS companies. Their onboarding funnel had a massive drop-off between signup and first meaningful action — meaning even the users who did sign up were not activating. They had no heatmaps, no session recordings, and no way to know where people were dropping off. Their GA4 was set up by a developer who had since left the company and nobody was confident the data was accurate.",
     whatWeDid: [
       "Audited and rebuilt their GA4 — fixing 6 critical tracking errors and setting up funnel visualization from landing page to activated user",
       "Installed Hotjar for heatmaps and session recordings — identified that 61% of visitors never scrolled past the hero section on the homepage",
@@ -131,19 +123,16 @@ export const caseStudies: CaseStudy[] = [
       { stat: "$127K", label: "projected annual revenue impact" },
       { stat: "3 months", label: "to full results" },
     ],
-    quote:
-      "I had been staring at our homepage for two years and thought I knew what was wrong. Revium Labs's AI analysis found three things I had completely missed. The headline test alone moved our signup rate by 40%. Simple change, massive impact.",
-    quoteName: "Priya Sharma",
-    quoteTitle: "Founder & CEO, Segmently",
+    description: "Based in Canada, BirdseyePost is an advertising and analytics platform.",
   },
   {
     id: "legal-tech",
-    client: "CounselFlow",
+    client: "FirmPilot",
     industry: "Legal Tech SaaS",
-    location: "Chicago, IL",
+    location: "Miami, FL",
     companySize: "Series A — 32 employees",
     arr: "$3.1M ARR",
-    slug: "/case-studies/counselflow-legaltech",
+    slug: "/case-studies/firmpilot-legaltech",
     tag: "Paid Advertising",
     tagColor: "pink",
     heroStat: "43",
@@ -151,7 +140,7 @@ export const caseStudies: CaseStudy[] = [
     duration: "5 months",
     services: ["Paid Advertising", "Conversion Rate Optimization"],
     challenge:
-      "CounselFlow sells contract management software to General Counsels and Legal Operations teams at mid-market companies across the US. They had tried Google Ads twice with two different agencies and burned through $40,000 with almost no pipeline to show for it. Their landing pages were sending all paid traffic to the homepage. Their LinkedIn ads were targeting anyone with Legal in their job title — paralegals, legal assistants, law students — instead of the actual buyers with $30K-$100K budget authority. They were ready to give up on paid media entirely.",
+      "FirmPilot sells AI-driven marketing and operations tools to law firms across the US. They had tried Google Ads twice with two different agencies and burned through $40,000 with almost no pipeline to show for it. Their landing pages were sending all paid traffic to the homepage. Their LinkedIn ads were targeting anyone with Legal in their job title — paralegals, legal assistants, law students — instead of the actual buyers with $30K-$100K budget authority. They were ready to give up on paid media entirely.",
     whatWeDid: [
       "Rebuilt LinkedIn campaign structure from scratch — hyper-targeted to General Counsels, VPs of Legal, and Legal Operations Managers at US companies with 200–2000 employees",
       "Created three separate ad creative tracks: one for in-house legal teams worried about contract risk, one focused on time savings (avg 15 hrs/week), one focused on compliance",
@@ -168,10 +157,7 @@ export const caseStudies: CaseStudy[] = [
       { stat: "$412K", label: "total pipeline generated in 5 months" },
       { stat: "5 months", label: "to full results" },
     ],
-    quote:
-      "We had genuinely given up on paid media. Two agencies, $40,000 gone, nothing to show for it. Revium Labs came in, looked at what we had been doing, and told us in the first call exactly why it was not working. Three months later we had more qualified pipeline than we had ever had from any channel.",
-    quoteName: "David Okafor",
-    quoteTitle: "VP Sales, CounselFlow",
+    description: "FirmPilot has built an AI-driven marketing and operations engine specifically for law firms.",
   },
 ];
 

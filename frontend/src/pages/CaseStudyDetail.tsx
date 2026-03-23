@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowLeft, Clock, Quote } from "lucide-react";
+import { ArrowRight, ArrowLeft, Clock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTABanner from "@/components/CTABanner";
 import PageMeta from "@/components/PageMeta";
@@ -206,28 +206,8 @@ const CaseStudyDetail = () => {
         </div>
       </section>
 
-      {/* Section 5 — Quote */}
+      {/* Section 5 — Services Used */}
       <section className="bg-white py-20 md:py-28">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <AnimatedSection>
-            <div className="bg-muted rounded-2xl p-8 md:p-12 border-l-4 border-primary">
-              <Quote className="w-10 h-10 text-primary/30 mb-4" />
-              <p className="text-lg md:text-xl text-foreground italic leading-relaxed">
-                "{cs.quote}"
-              </p>
-              <div className="mt-6">
-                <p className="font-display font-bold text-foreground">
-                  {cs.quoteName}
-                </p>
-                <p className="text-sm text-muted-foreground">{cs.quoteTitle}</p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Section 6 — Services Used */}
-      <section className="bg-white pb-20 md:pb-28">
         <div className="container mx-auto px-6 max-w-4xl">
           <AnimatedSection className="text-center mb-10">
             <span className="text-sm font-bold text-primary uppercase tracking-[0.15em]">
@@ -253,7 +233,7 @@ const CaseStudyDetail = () => {
         </div>
       </section>
 
-      {/* Section 7 — CTA */}
+      {/* Section 6 — CTA */}
       <CTABanner
         headline={`Ready to see results like ${cs.client}?`}
         subheadline="Start with a free audit — we will tell you exactly what we would do for your business specifically."
