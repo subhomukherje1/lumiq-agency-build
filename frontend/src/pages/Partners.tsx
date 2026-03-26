@@ -4,14 +4,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import PageMeta from "@/components/PageMeta";
+import googleTagManagerLogo from "@/assets/google-tag-manager.png";
+import hotjarLogo from "@/assets/hotjar.png";
+import salesforceLogo from "@/assets/salesforce.svg";
+import omniconvertLogo from "@/assets/omniconvert.jpg";
+import meta from "@/assets/meta.png";
+import unbounceLogo from "@/assets/unbounce.jpg";
+import googleAnalyticsLogo4 from "@/assets/google-analytics-5.png";
 
-type Category = "All" | "Analytics" | "Experimentation & CRO" | "Paid Media" | "CRM & Automation" | "AI Tools";
+type Category =
+  | "All"
+  | "Analytics"
+  | "Experimentation & CRO"
+  | "Paid Media"
+  | "CRM & Automation"
+  | "AI Tools";
 
 interface Partner {
   category: Exclude<Category, "All">;
   name: string;
   description: string;
   url: string;
+  logo?: string;
 }
 
 const partners: Partner[] = [
@@ -19,175 +33,222 @@ const partners: Partner[] = [
   {
     category: "Analytics",
     name: "Google Analytics 4",
-    description: "The industry standard for web analytics — we implement GA4 with flawless server-side tracking and custom event architecture tailored to B2B conversion funnels.",
+    description:
+      "The industry standard for web analytics — we implement GA4 with flawless server-side tracking and custom event architecture tailored to B2B conversion funnels.",
     url: "https://analytics.google.com",
+    logo: googleAnalyticsLogo4,
   },
   {
     category: "Analytics",
     name: "Google Tag Manager",
-    description: "The foundation of clean tracking infrastructure — we use GTM to implement and manage all tracking tags without touching your codebase.",
+    description:
+      "The foundation of clean tracking infrastructure — we use GTM to implement and manage all tracking tags without touching your codebase.",
     url: "https://tagmanager.google.com",
+    logo: googleTagManagerLogo,
   },
   {
     category: "Analytics",
     name: "Hotjar",
-    description: "Heatmaps, session recordings, and on-page surveys that show us exactly where your B2B buyers hesitate, rage-click, or abandon your funnel.",
+    description:
+      "Heatmaps, session recordings, and on-page surveys that show us exactly where your B2B buyers hesitate, rage-click, or abandon your funnel.",
     url: "https://www.hotjar.com",
+    logo: hotjarLogo,
   },
   {
     category: "Analytics",
     name: "Contentsquare",
-    description: "Enterprise-grade digital experience analytics that reveals how users interact with every element of your site — used for deep UX analysis on high-traffic B2B properties.",
+    description:
+      "Enterprise-grade digital experience analytics that reveals how users interact with every element of your site — used for deep UX analysis on high-traffic B2B properties.",
     url: "https://contentsquare.com",
+    logo: "https://framerusercontent.com/images/RXol6wUcpNb7ZmH03CMBD5iPBcg.png?scale-down-to=1024&width=1440&height=1024",
   },
   {
     category: "Analytics",
     name: "Lucky Orange",
-    description: "Session recordings, heatmaps, and live visitor tracking — ideal for SMB and mid-market B2B companies starting their CRO journey without enterprise tool overhead.",
+    description:
+      "Session recordings, heatmaps, and live visitor tracking — ideal for SMB and mid-market B2B companies starting their CRO journey without enterprise tool overhead.",
     url: "https://www.luckyorange.com",
+    logo: "https://framerusercontent.com/images/1qnSE6Rxclsdo7QffGxSYyTa8.png?scale-down-to=1024&width=1440&height=732",
   },
   {
     category: "Analytics",
     name: "Looker Studio",
-    description: "We use Looker Studio to build custom executive dashboards that connect ad spend directly to pipeline and closed revenue — the single source of truth your CEO actually opens.",
+    description:
+      "We use Looker Studio to build custom executive dashboards that connect ad spend directly to pipeline and closed revenue — the single source of truth your CEO actually opens.",
     url: "https://lookerstudio.google.com",
   },
   {
     category: "Analytics",
     name: "Microsoft Power BI",
-    description: "For enterprise clients requiring more complex data modelling — we build Power BI dashboards that connect your CRM, ad platforms, and web analytics into one unified revenue view.",
+    description:
+      "For enterprise clients requiring more complex data modelling — we build Power BI dashboards that connect your CRM, ad platforms, and web analytics into one unified revenue view.",
     url: "https://powerbi.microsoft.com",
   },
   // EXPERIMENTATION & CRO
   {
     category: "Experimentation & CRO",
     name: "VWO",
-    description: "Our primary A/B testing and personalisation platform — we use VWO to run controlled experiments, multivariate tests, and AI-assisted personalisation campaigns across your B2B funnel.",
+    description:
+      "Our primary A/B testing and personalisation platform — we use VWO to run controlled experiments, multivariate tests, and AI-assisted personalisation campaigns across your B2B funnel.",
     url: "https://vwo.com",
+    logo: "https://framerusercontent.com/images/B4bOah1teLpRN6Kqcxiw60wNSM.png?scale-down-to=1024&width=1440&height=732",
   },
   {
     category: "Experimentation & CRO",
     name: "Convert",
-    description: "A privacy-focused A/B testing platform built for serious experimenters — ideal for SMB and mid-market B2B companies that need enterprise-grade testing without the enterprise price tag.",
+    description:
+      "A privacy-focused A/B testing platform built for serious experimenters — ideal for SMB and mid-market B2B companies that need enterprise-grade testing without the enterprise price tag.",
     url: "https://www.convert.com",
+    logo: "https://framerusercontent.com/images/IGhkihU1IAXhp84RSW8vNWSBBaU.png?scale-down-to=1024&width=1440&height=732",
   },
   {
     category: "Experimentation & CRO",
     name: "Omniconvert",
-    description: "A CRO and customer intelligence platform combining A/B testing, surveys, and segmentation — particularly strong for B2B companies wanting to personalise the buyer journey based on firmographic data.",
+    description:
+      "A CRO and customer intelligence platform combining A/B testing, surveys, and segmentation — particularly strong for B2B companies wanting to personalise the buyer journey based on firmographic data.",
     url: "https://www.omniconvert.com",
+    logo: omniconvertLogo,
   },
   {
     category: "Experimentation & CRO",
     name: "Optimizely",
-    description: "Enterprise experimentation platform used for large-scale A/B testing, feature flagging, and full-stack personalisation across web and product experiences.",
+    description:
+      "Enterprise experimentation platform used for large-scale A/B testing, feature flagging, and full-stack personalisation across web and product experiences.",
     url: "https://www.optimizely.com",
+    logo: "https://framerusercontent.com/images/OEXmRECEy0o4RTdWWdhljGpvw.png?scale-down-to=1024&width=1440&height=732",
   },
   {
     category: "Experimentation & CRO",
     name: "Unbounce",
-    description: "The fastest way to build and test high-converting landing pages without developer dependency — we use Unbounce to deploy campaign-specific pages that match ad creative intent precisely.",
+    description:
+      "The fastest way to build and test high-converting landing pages without developer dependency — we use Unbounce to deploy campaign-specific pages that match ad creative intent precisely.",
     url: "https://unbounce.com",
+    logo: unbounceLogo,
   },
   {
     category: "Experimentation & CRO",
     name: "Instapage",
-    description: "Enterprise landing page platform with built-in A/B testing and personalisation — used for high-volume paid media campaigns requiring multiple audience-specific page variants.",
+    description:
+      "Enterprise landing page platform with built-in A/B testing and personalisation — used for high-volume paid media campaigns requiring multiple audience-specific page variants.",
     url: "https://instapage.com",
   },
   // PAID MEDIA
   {
     category: "Paid Media",
     name: "LinkedIn Campaign Manager",
-    description: "Our primary B2B paid media platform — we use LinkedIn to run hyper-targeted ABM campaigns aimed at specific job titles, company sizes, and industries your sales team actually wants to close.",
+    description:
+      "Our primary B2B paid media platform — we use LinkedIn to run hyper-targeted ABM campaigns aimed at specific job titles, company sizes, and industries your sales team actually wants to close.",
     url: "https://business.linkedin.com/marketing-solutions",
   },
   {
     category: "Paid Media",
     name: "Google Ads",
-    description: "High-intent search campaigns that capture B2B buyers at the exact moment they are searching for solutions in your category — tightly managed keywords, bids, and landing page alignment.",
+    description:
+      "High-intent search campaigns that capture B2B buyers at the exact moment they are searching for solutions in your category — tightly managed keywords, bids, and landing page alignment.",
     url: "https://ads.google.com",
   },
   {
     category: "Paid Media",
     name: "Meta Ads",
-    description: "Used selectively for B2B retargeting and brand awareness campaigns — particularly effective for nurturing prospects who visited your site but did not convert.",
+    description:
+      "Used selectively for B2B retargeting and brand awareness campaigns — particularly effective for nurturing prospects who visited your site but did not convert.",
     url: "https://www.facebook.com/business/ads",
+    logo: meta,
   },
   {
     category: "Paid Media",
     name: "LinkedIn Insight Tag",
-    description: "The foundation of LinkedIn conversion tracking and website retargeting — we implement this with server-side precision so no conversion data is lost to ad blockers.",
+    description:
+      "The foundation of LinkedIn conversion tracking and website retargeting — we implement this with server-side precision so no conversion data is lost to ad blockers.",
     url: "https://business.linkedin.com/marketing-solutions/insight-tag",
   },
   // CRM & AUTOMATION
   {
     category: "CRM & Automation",
     name: "HubSpot",
-    description: "Our primary CRM integration platform for SMB and mid-market B2B clients — we connect HubSpot to your ad platforms, clean your data, and build lifecycle automation that routes leads to the right sales rep instantly.",
+    description:
+      "Our primary CRM integration platform for SMB and mid-market B2B clients — we connect HubSpot to your ad platforms, clean your data, and build lifecycle automation that routes leads to the right sales rep instantly.",
     url: "https://www.hubspot.com",
   },
+
   {
     category: "CRM & Automation",
     name: "Salesforce",
-    description: "Enterprise CRM integration for larger B2B clients — we connect Salesforce to your marketing stack and build closed-loop attribution that tracks from first ad click to closed-won opportunity.",
+    description:
+      "Enterprise CRM integration for larger B2B clients — we connect Salesforce to your marketing stack and build closed-loop attribution that tracks from first ad click to closed-won opportunity.",
     url: "https://www.salesforce.com",
+    logo: salesforceLogo,
   },
   {
     category: "CRM & Automation",
     name: "Zapier",
-    description: "The connective tissue between tools that don't natively integrate — we use Zapier to build automated workflows that keep your CRM data clean, your leads routed correctly, and your reporting running without manual intervention.",
+    description:
+      "The connective tissue between tools that don't natively integrate — we use Zapier to build automated workflows that keep your CRM data clean, your leads routed correctly, and your reporting running without manual intervention.",
     url: "https://zapier.com",
   },
   {
     category: "CRM & Automation",
     name: "Make (formerly Integromat)",
-    description: "Advanced workflow automation for complex multi-step integrations between your CRM, ad platforms, analytics stack, and reporting tools.",
+    description:
+      "Advanced workflow automation for complex multi-step integrations between your CRM, ad platforms, analytics stack, and reporting tools.",
     url: "https://www.make.com",
   },
   // AI TOOLS
   {
     category: "AI Tools",
     name: "Fibre AI",
-    description: "AI-powered audience targeting and lead enrichment platform — we use Fibre AI to identify and target the highest-intent B2B accounts before they even visit your website.",
+    description:
+      "AI-powered audience targeting and lead enrichment platform — we use Fibre AI to identify and target the highest-intent B2B accounts before they even visit your website.",
     url: "https://www.fibre.ai",
   },
   {
     category: "AI Tools",
     name: "Clay",
-    description: "AI-powered data enrichment and outbound automation — we use Clay to build highly targeted prospect lists enriched with firmographic, technographic, and intent data for ABM campaigns.",
+    description:
+      "AI-powered data enrichment and outbound automation — we use Clay to build highly targeted prospect lists enriched with firmographic, technographic, and intent data for ABM campaigns.",
     url: "https://www.clay.com",
   },
   {
     category: "AI Tools",
     name: "Clearbit (now Breeze by HubSpot)",
-    description: "B2B data enrichment that identifies anonymous website visitors by company and job title — turning your traffic analytics into actionable account intelligence.",
+    description:
+      "B2B data enrichment that identifies anonymous website visitors by company and job title — turning your traffic analytics into actionable account intelligence.",
     url: "https://clearbit.com",
   },
   {
     category: "AI Tools",
     name: "Mutiny",
-    description: "AI-powered B2B website personalisation — we use Mutiny to serve different homepage and landing page experiences to different target accounts automatically, without engineering resources.",
+    description:
+      "AI-powered B2B website personalisation — we use Mutiny to serve different homepage and landing page experiences to different target accounts automatically, without engineering resources.",
     url: "https://www.mutinyhq.com",
   },
   {
     category: "AI Tools",
     name: "6sense",
-    description: "AI-driven account engagement platform that predicts which accounts are in-market for your solution — used to prioritise ABM targeting and time outreach for maximum pipeline impact.",
+    description:
+      "AI-driven account engagement platform that predicts which accounts are in-market for your solution — used to prioritise ABM targeting and time outreach for maximum pipeline impact.",
     url: "https://6sense.com",
   },
   {
     category: "AI Tools",
     name: "Drift (now Salesloft)",
-    description: "AI-powered conversational marketing — we implement Drift to engage high-intent website visitors in real time, qualify them automatically, and route them to the right sales rep before they bounce.",
+    description:
+      "AI-powered conversational marketing — we implement Drift to engage high-intent website visitors in real time, qualify them automatically, and route them to the right sales rep before they bounce.",
     url: "https://www.drift.com",
   },
 ];
 
-const categories: Category[] = ["All", "Analytics", "Experimentation & CRO", "Paid Media", "CRM & Automation", "AI Tools"];
+const categories: Category[] = [
+  "All",
+  "Analytics",
+  "Experimentation & CRO",
+  "Paid Media",
+  "CRM & Automation",
+  "AI Tools",
+];
 
 const categoryColors: Record<Exclude<Category, "All">, string> = {
-  "Analytics": "bg-primary",
+  Analytics: "bg-primary",
   "Experimentation & CRO": "bg-accent-pink",
   "Paid Media": "bg-purple-600",
   "CRM & Automation": "bg-indigo-600",
@@ -197,9 +258,10 @@ const categoryColors: Record<Exclude<Category, "All">, string> = {
 const Partners = () => {
   const [activeFilter, setActiveFilter] = useState<Category>("All");
 
-  const filteredPartners = activeFilter === "All" 
-    ? partners 
-    : partners.filter(p => p.category === activeFilter);
+  const filteredPartners =
+    activeFilter === "All"
+      ? partners
+      : partners.filter((p) => p.category === activeFilter);
 
   return (
     <div className="min-h-screen">
@@ -241,7 +303,10 @@ const Partners = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             data-testid="partners-hero-subheadline"
           >
-            We partner with the best platforms in analytics, experimentation, CRM, and paid media. Every tool we recommend we have used in live client engagements — nothing is here for show. If you want an intro to any of these platforms, we are happy to make the connection.
+            We partner with the best platforms in analytics, experimentation,
+            CRM, and paid media. Every tool we recommend we have used in live
+            client engagements — nothing is here for show. If you want an intro
+            to any of these platforms, we are happy to make the connection.
           </motion.p>
         </div>
       </section>
@@ -251,9 +316,9 @@ const Partners = () => {
       ═══════════════════════════════════════════════════════════════════ */}
       <section className="bg-white py-4 md:py-8 border-b border-border sticky top-16 md:top-20 z-40 overflow-hidden">
         <div className="container mx-auto px-5 md:px-6">
-          <div 
+          <div
             className="flex gap-2 md:gap-3 md:justify-center overflow-x-auto pb-2 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 scrollbar-hide"
-            style={{ WebkitOverflowScrolling: 'touch' }}
+            style={{ WebkitOverflowScrolling: "touch" }}
             data-testid="filter-bar"
           >
             {categories.map((cat) => (
@@ -293,14 +358,25 @@ const Partners = () => {
                   data-testid={`partner-card-${partner.name.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {/* Category Pill */}
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mb-4 ${categoryColors[partner.category]}`}>
+                  <span
+                    className={`inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mb-4 ${categoryColors[partner.category]}`}
+                  >
                     {partner.category}
                   </span>
 
                   {/* Tool Logo Placeholder */}
                   {/* TODO: Replace with official tool logo */}
-                  <div className="w-full h-12 bg-muted rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-xs text-muted-foreground font-medium">{partner.name}</span>
+
+                  <div className="w-full h-36  rounded-lg flex items-center justify-center mb-4">
+                    {partner.logo && (
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={320}
+                        height={160}
+                        className="object-contain w-[320px] h-[160px]"
+                      />
+                    )}
                   </div>
 
                   {/* Tool Name */}
@@ -341,12 +417,16 @@ const Partners = () => {
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <h2 className="mt-3 md:mt-4 font-display text-[26px] leading-tight md:text-4xl font-extrabold text-white max-w-2xl mx-auto">
-              Using one of these tools and want expert help getting the most from it?
+              Using one of these tools and want expert help getting the most
+              from it?
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
             <p className="mt-4 md:mt-6 text-base md:text-lg text-white/50 max-w-[560px] mx-auto leading-relaxed">
-              We implement, integrate, and optimize these platforms in live B2B client environments every day. If you want to know how we'd apply any of them to your specific situation — start with a Revenue Teardown.
+              We implement, integrate, and optimize these platforms in live B2B
+              client environments every day. If you want to know how we'd apply
+              any of them to your specific situation — start with a Revenue
+              Teardown.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.3}>
@@ -360,7 +440,8 @@ const Partners = () => {
           </AnimatedSection>
           <AnimatedSection delay={0.4}>
             <p className="mt-6 text-sm text-white/30 max-w-md mx-auto">
-              We are not paid to recommend any of these tools. We recommend them because we use them and they work.
+              We are not paid to recommend any of these tools. We recommend them
+              because we use them and they work.
             </p>
           </AnimatedSection>
         </div>

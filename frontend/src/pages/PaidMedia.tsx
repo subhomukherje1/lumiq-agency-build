@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Linkedin, Search, RefreshCw, Users, TrendingUp, FileCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Linkedin,
+  Search,
+  RefreshCw,
+  Users,
+  TrendingUp,
+  FileCheck,
+} from "lucide-react";
 import HeroProofPoints from "@/components/HeroProofPoints";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTABanner from "@/components/CTABanner";
@@ -47,20 +55,21 @@ const aiCards = [
 const paidMediaServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "B2B Paid Advertising — LinkedIn ABM & Google Ads",
-  "provider": {
+  name: "B2B Paid Advertising — LinkedIn ABM & Google Ads",
+  provider: {
     "@type": "Organization",
-    "name": "Revium Labs"
+    name: "Revium Labs",
   },
-  "description": "LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimized entirely for qualified B2B pipeline — not clicks or impressions.",
-  "areaServed": ["US", "CA"],
-  "url": "https://reviumlabs.co/paid-advertising"
+  description:
+    "LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimized entirely for qualified B2B pipeline — not clicks or impressions.",
+  areaServed: ["US", "CA"],
+  url: "https://reviumlabs.co/paid-advertising",
 };
 
 const PaidMedia = () => (
   <div className="min-h-screen">
-    <PageMeta 
-      title="B2B Paid Advertising Agency — LinkedIn ABM & Google Ads | Revium Labs" 
+    <PageMeta
+      title="B2B Paid Advertising Agency — LinkedIn ABM & Google Ads | Revium Labs"
       description="LinkedIn ABM, high-intent Google Search, and full-funnel retargeting optimized entirely for qualified B2B pipeline — not clicks or impressions."
       keywords="B2B paid media agency, LinkedIn ABM agency, Google Ads B2B, account based marketing, B2B performance marketing, paid advertising SaaS"
       structuredData={paidMediaServiceSchema}
@@ -94,7 +103,10 @@ const PaidMedia = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          B2B paid media is a different game. Audiences are tiny. Deals take months. Clicks mean nothing. We run LinkedIn and Google campaigns built entirely around your ideal customer profile — measured in qualified pipeline, not impressions.
+          B2B paid media is a different game. Audiences are tiny. Deals take
+          months. Clicks mean nothing. We run LinkedIn and Google campaigns
+          built entirely around your ideal customer profile — measured in
+          qualified pipeline, not impressions.
         </motion.p>
         <motion.div
           className="mt-10"
@@ -106,7 +118,8 @@ const PaidMedia = () => (
             to="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors"
           >
-            Start with a paid advertising audit <ArrowRight className="w-4 h-4" />
+            Start with a paid advertising audit{" "}
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
         <HeroProofPoints />
@@ -124,10 +137,14 @@ const PaidMedia = () => (
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {services.map((card, i) => (
             <AnimatedSection key={card.title} delay={i * 0.1}>
-              <div className="gradient-purple-card h-full">
+              <div className="bg-dark p-8 h-full rounded-2xl">
                 <card.icon className="w-10 h-10 text-accent-pink mb-5" />
-                <h3 className="font-display text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-white/70 leading-relaxed text-sm">{card.body}</p>
+                <h3 className="font-display text-lg font-bold text-white mb-3">
+                  {card.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed text-sm">
+                  {card.body}
+                </p>
               </div>
             </AnimatedSection>
           ))}
@@ -139,7 +156,9 @@ const PaidMedia = () => (
     <section className="bg-dark py-24">
       <div className="container mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-accent-pink text-sm font-semibold uppercase tracking-widest mb-4">AI-Powered Media Buying</p>
+          <p className="text-accent-pink text-sm font-semibold uppercase tracking-widest mb-4">
+            AI-Powered Media Buying
+          </p>
           <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white max-w-3xl mx-auto leading-tight">
             Smarter targeting.{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-pink">
@@ -150,10 +169,14 @@ const PaidMedia = () => (
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {aiCards.map((card, i) => (
             <AnimatedSection key={card.title} delay={i * 0.1}>
-              <div className="gradient-purple-card h-full">
+              <div className="bg-dark p-8 h-full rounded-2xl">
                 <card.icon className="w-10 h-10 text-accent-pink mb-5" />
-                <h3 className="font-display text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-white/70 leading-relaxed text-sm">{card.body}</p>
+                <h3 className="font-display text-lg font-bold text-white mb-3">
+                  {card.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed text-sm">
+                  {card.body}
+                </p>
               </div>
             </AnimatedSection>
           ))}

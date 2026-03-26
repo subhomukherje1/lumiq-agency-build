@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, BarChart3, Eye, Brain, CheckCircle2, Search, Sparkles, Users } from "lucide-react";
+import {
+  ArrowRight,
+  BarChart3,
+  Eye,
+  Brain,
+  CheckCircle2,
+  Search,
+  Sparkles,
+  Users,
+} from "lucide-react";
 import HeroProofPoints from "@/components/HeroProofPoints";
 import AnimatedSection from "@/components/AnimatedSection";
 import CountUp from "@/components/CountUp";
@@ -58,20 +67,21 @@ const checklist = [
 const croServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Conversion Rate Optimization for B2B SaaS",
-  "provider": {
+  name: "Conversion Rate Optimization for B2B SaaS",
+  provider: {
     "@type": "Organization",
-    "name": "Revium Labs"
+    name: "Revium Labs",
   },
-  "description": "AI-powered CRO for B2B companies — A/B testing, landing page optimization, and funnel analysis.",
-  "areaServed": ["US", "CA"],
-  "url": "https://reviumlabs.co/cro"
+  description:
+    "AI-powered CRO for B2B companies — A/B testing, landing page optimization, and funnel analysis.",
+  areaServed: ["US", "CA"],
+  url: "https://reviumlabs.co/cro",
 };
 
 const CRO = () => (
   <div className="min-h-screen">
-    <PageMeta 
-      title="Conversion Rate Optimization for B2B SaaS — Revium Labs" 
+    <PageMeta
+      title="Conversion Rate Optimization for B2B SaaS — Revium Labs"
       description="AI-powered CRO for B2B companies. We find where your buyers drop off and run data-backed A/B tests to convert more traffic into pipeline — without extra ad spend."
       keywords="B2B conversion rate optimization, CRO agency, A/B testing B2B, VWO agency, landing page optimization, B2B CRO"
       structuredData={croServiceSchema}
@@ -105,7 +115,10 @@ const CRO = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Most B2B companies spend thousands getting buyers to their website — then lose them to a slow page, a confusing form, or a headline that says nothing. We fix that — with AI-assisted analysis and rigorous A/B testing.
+          Most B2B companies spend thousands getting buyers to their website —
+          then lose them to a slow page, a confusing form, or a headline that
+          says nothing. We fix that — with AI-assisted analysis and rigorous A/B
+          testing.
         </motion.p>
         <motion.div
           className="mt-10"
@@ -129,7 +142,8 @@ const CRO = () => (
       <div className="container mx-auto px-6 text-center">
         <AnimatedSection>
           <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white max-w-4xl mx-auto leading-snug">
-            We have taken clients from <span className="text-accent-pink">2.42%</span> to{" "}
+            We have taken clients from{" "}
+            <span className="text-accent-pink">2.42%</span> to{" "}
             <span className="text-accent-pink">4.15%</span> conversion — a{" "}
             <span className="stat-callout inline">
               <CountUp end={71} suffix="%" />
@@ -152,9 +166,15 @@ const CRO = () => (
           {steps.map((step, i) => (
             <AnimatedSection key={step.num} delay={i * 0.1}>
               <div className="relative">
-                <span className="font-display text-7xl font-extrabold text-primary/10">{step.num}</span>
-                <h3 className="font-display text-xl font-bold text-foreground mt-2">{step.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">{step.body}</p>
+                <span className="font-display text-7xl font-extrabold text-primary/10">
+                  {step.num}
+                </span>
+                <h3 className="font-display text-xl font-bold text-foreground mt-2">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  {step.body}
+                </p>
               </div>
             </AnimatedSection>
           ))}
@@ -166,7 +186,9 @@ const CRO = () => (
     <section className="bg-muted py-24">
       <div className="container mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-4">AI-Powered CRO</p>
+          <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-4">
+            AI-Powered CRO
+          </p>
           <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground max-w-3xl mx-auto leading-tight">
             We use AI to find what your analytics dashboard is hiding.
           </h2>
@@ -174,10 +196,14 @@ const CRO = () => (
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {aiCards.map((card, i) => (
             <AnimatedSection key={card.title} delay={i * 0.1}>
-              <div className="gradient-purple-card h-full">
+              <div className="bg-dark p-8 h-full rounded-2xl">
                 <card.icon className="w-10 h-10 text-accent-pink mb-5" />
-                <h3 className="font-display text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-white/70 leading-relaxed text-sm">{card.body}</p>
+                <h3 className="font-display text-lg font-bold text-white mb-3">
+                  {card.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed text-sm">
+                  {card.body}
+                </p>
               </div>
             </AnimatedSection>
           ))}
