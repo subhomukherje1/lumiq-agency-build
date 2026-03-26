@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Server, DatabaseZap, LayoutDashboard, Bot, TrendingUp, ShieldAlert } from "lucide-react";
+import {
+  ArrowRight,
+  Server,
+  DatabaseZap,
+  LayoutDashboard,
+  Bot,
+  TrendingUp,
+  ShieldAlert,
+} from "lucide-react";
 import HeroProofPoints from "@/components/HeroProofPoints";
 import AnimatedSection from "@/components/AnimatedSection";
 import CTABanner from "@/components/CTABanner";
@@ -47,20 +55,21 @@ const aiCards = [
 const analyticsServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "B2B Analytics & Attribution",
-  "provider": {
+  name: "B2B Analytics & Attribution",
+  provider: {
     "@type": "Organization",
-    "name": "Revium Labs"
+    name: "Revium Labs",
   },
-  "description": "Fix your GA4, connect your CRM, and build dashboards that prove marketing ROI. We implement server-side tracking and attribution for B2B SaaS companies.",
-  "areaServed": ["US", "CA"],
-  "url": "https://reviumlabs.co/analytics"
+  description:
+    "Fix your GA4, connect your CRM, and build dashboards that prove marketing ROI. We implement server-side tracking and attribution for B2B SaaS companies.",
+  areaServed: ["US", "CA"],
+  url: "https://reviumlabs.co/analytics",
 };
 
 const Analytics = () => (
   <div className="min-h-screen">
-    <PageMeta 
-      title="B2B Analytics & Attribution Agency — Revium Labs" 
+    <PageMeta
+      title="B2B Analytics & Attribution Agency — Revium Labs"
       description="Fix your GA4, connect your CRM, and build dashboards that prove marketing ROI. We implement server-side tracking and attribution for B2B SaaS companies in the US and Canada."
       keywords="GA4 implementation agency, B2B marketing attribution, server-side tracking, HubSpot Salesforce integration, marketing ROI dashboard, B2B analytics agency"
       structuredData={analyticsServiceSchema}
@@ -84,7 +93,9 @@ const Analytics = () => (
           transition={{ duration: 0.5, delay: 0.15 }}
         >
           If your data is wrong, every decision built on it is{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-pink">wrong.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-pink">
+            wrong.
+          </span>
         </motion.h1>
         <motion.p
           className="mt-6 text-[15px] md:text-lg text-white/60 max-w-2xl leading-relaxed"
@@ -92,7 +103,10 @@ const Analytics = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Most B2B marketing teams are optimizing based on GA4 data that is 30 to 40 percent inaccurate. Ad blockers, misconfigured tags, and disconnected CRMs mean your attribution is fiction. We fix the source — so every report you run is actually true.
+          Most B2B marketing teams are optimizing based on GA4 data that is 30
+          to 40 percent inaccurate. Ad blockers, misconfigured tags, and
+          disconnected CRMs mean your attribution is fiction. We fix the source
+          — so every report you run is actually true.
         </motion.p>
         <motion.div
           className="mt-10"
@@ -116,7 +130,8 @@ const Analytics = () => (
       <div className="container mx-auto px-6 text-center">
         <AnimatedSection>
           <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white max-w-4xl mx-auto leading-snug">
-            <span className="text-accent-pink">90%</span> of GA4 setups have critical tracking errors. We fix that.
+            <span className="text-accent-pink">90%</span> of GA4 setups have
+            critical tracking errors. We fix that.
           </p>
         </AnimatedSection>
       </div>
@@ -133,10 +148,14 @@ const Analytics = () => (
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {services.map((card, i) => (
             <AnimatedSection key={card.title} delay={i * 0.1}>
-              <div className="gradient-purple-card h-full">
+              <div className="bg-dark p-8 h-full rounded-2xl">
                 <card.icon className="w-10 h-10 text-accent-pink mb-5" />
-                <h3 className="font-display text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-white/70 leading-relaxed text-sm">{card.body}</p>
+                <h3 className="font-display text-lg font-bold text-white mb-3">
+                  {card.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed text-sm">
+                  {card.body}
+                </p>
               </div>
             </AnimatedSection>
           ))}
@@ -148,9 +167,12 @@ const Analytics = () => (
     <section className="bg-dark py-24">
       <div className="container mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-accent-pink text-sm font-semibold uppercase tracking-widest mb-4">AI-Powered Analytics</p>
+          <p className="text-accent-pink text-sm font-semibold uppercase tracking-widest mb-4">
+            AI-Powered Analytics
+          </p>
           <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white max-w-3xl mx-auto leading-tight">
-            We do not build dashboards that look pretty. We build dashboards that answer:{" "}
+            We do not build dashboards that look pretty. We build dashboards
+            that answer:{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-pink">
               what should we spend more on?
             </span>
@@ -159,10 +181,14 @@ const Analytics = () => (
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {aiCards.map((card, i) => (
             <AnimatedSection key={card.title} delay={i * 0.1}>
-              <div className="gradient-purple-card h-full">
+              <div className="bg-dark p-8 h-full rounded-2xl">
                 <card.icon className="w-10 h-10 text-accent-pink mb-5" />
-                <h3 className="font-display text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-white/70 leading-relaxed text-sm">{card.body}</p>
+                <h3 className="font-display text-lg font-bold text-white mb-3">
+                  {card.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed text-sm">
+                  {card.body}
+                </p>
               </div>
             </AnimatedSection>
           ))}
