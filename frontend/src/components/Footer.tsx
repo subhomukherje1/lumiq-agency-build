@@ -6,6 +6,7 @@ const Footer = () => {
     <footer className="bg-dark text-white">
       <div className="container mx-auto px-5 md:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left">
+          
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
             <Link to="/" className="inline-block">
@@ -32,6 +33,7 @@ const Footer = () => {
                   to="/paid-advertising"
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center min-h-[44px] md:min-h-0"
                 >
+                <Link to="/paid-advertising" className="footer-link">
                   Paid Advertising
                 </Link>
               </li>
@@ -40,6 +42,7 @@ const Footer = () => {
                   to="/cro"
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center min-h-[44px] md:min-h-0"
                 >
+                <Link to="/cro" className="footer-link">
                   Conversion Rate Optimization
                 </Link>
               </li>
@@ -48,6 +51,7 @@ const Footer = () => {
                   to="/analytics"
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center min-h-[44px] md:min-h-0"
                 >
+                <Link to="/analytics" className="footer-link">
                   Analytics & Attribution
                 </Link>
               </li>
@@ -65,6 +69,7 @@ const Footer = () => {
                   to="/case-studies"
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center min-h-[44px] md:min-h-0"
                 >
+                <Link to="/case-studies" className="footer-link">
                   Case Studies
                 </Link>
               </li>
@@ -73,6 +78,7 @@ const Footer = () => {
                   to="/pricing"
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center min-h-[44px] md:min-h-0"
                 >
+                <Link to="/pricing" className="footer-link">
                   Our Model
                 </Link>
               </li>
@@ -81,6 +87,7 @@ const Footer = () => {
                   to="/partners"
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center min-h-[44px] md:min-h-0"
                 >
+                <Link to="/partners" className="footer-link">
                   Partners
                 </Link>
               </li>
@@ -89,6 +96,7 @@ const Footer = () => {
                   to="/contact"
                   className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center min-h-[44px] md:min-h-0"
                 >
+                <Link to="/contact" className="footer-link">
                   Contact
                 </Link>
               </li>
@@ -108,13 +116,19 @@ const Footer = () => {
                 >
                 <a href="tel:+13464854645" className="inline-flex items-center justify-center md:justify-start gap-2 text-sm text-white/70 hover:text-white transition-colors min-h-[44px]">
                   <Phone className="w-4 h-4 shrink-0" /> +1 346 485 4645
+                <a href="tel:+13464854645" className="footer-link">
+                  <Phone className="w-4 h-4 shrink-0" />
+                  +1 346 485 4645
                 </a>
               </li>
+
               <li>
-                <a href="mailto:hello@reviumlabs.co" className="inline-flex items-center justify-center md:justify-start gap-2 text-sm text-white/70 hover:text-white transition-colors min-h-[44px]">
-                  <Mail className="w-4 h-4 shrink-0" /> hello@reviumlabs.co
+                <a href="mailto:hello@reviumlabs.co" className="footer-link">
+                  <Mail className="w-4 h-4 shrink-0" />
+                  hello@reviumlabs.co
                 </a>
               </li>
+
               <li>
                 <a
                   href="https://www.linkedin.com/company/revium-labs/about/"
@@ -123,6 +137,13 @@ const Footer = () => {
                   className="inline-flex items-center justify-center md:justify-start gap-2 text-sm text-white/70 hover:text-white transition-colors min-h-[44px]"
                 >
                   <Linkedin className="w-4 h-4 shrink-0" /> LinkedIn
+                  href="https://linkedin.com/company/reviumlabs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-link"
+                >
+                  <Linkedin className="w-4 h-4 shrink-0" />
+                  LinkedIn
                 </a>
               </li>
             </ul>
