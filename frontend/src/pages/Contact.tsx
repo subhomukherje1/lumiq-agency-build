@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, Search, ArrowRight, Send, Loader2, Lock, Clock } from "lucide-react";
+import { Calendar, Search, Phone, ArrowRight, Send, Loader2, Lock, Clock } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import PageMeta from "@/components/PageMeta";
@@ -37,6 +37,15 @@ const contactCards = [
     buttonText: "Fill in the form below",
     href: "#audit-form",
     external: false,
+    iconClass: "bg-primary/10 text-primary",
+  },
+  {
+    icon: Phone,
+    title: "Call us directly",
+    body: "Prefer to talk? Give us a call during US business hours. We are happy to answer questions.",
+    buttonText: "+1 346 485 4645",
+    href: "tel:+13464854645",
+    external: true,
     iconClass: "bg-primary/10 text-primary",
   },
 ];
@@ -167,7 +176,7 @@ const faqSchema = {
       {/* ───── CONTACT OPTIONS ───── */}
       <section className="py-12 md:py-24">
         <div className="container mx-auto px-5 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {contactCards.map((card, i) => (
               <AnimatedSection key={card.title} delay={i * 0.1}>
                 <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col h-full">

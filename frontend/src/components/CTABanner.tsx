@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 interface CTABannerProps {
   headline?: string;
@@ -47,6 +47,21 @@ const CTABanner = ({
           >
             {buttonText} <ArrowRight className="w-4 h-4" />
           </Link>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-6"
+        >
+          <a 
+            href="tel:+13464854645" 
+            className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            Or call us: +1 346 485 4645
+          </a>
         </motion.div>
       </div>
     </section>
