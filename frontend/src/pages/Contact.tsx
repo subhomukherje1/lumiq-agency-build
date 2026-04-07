@@ -1,4 +1,14 @@
 import { motion } from "framer-motion";
+import {
+  Calendar,
+  Search,
+  ArrowRight,
+  Send,
+  Loader2,
+  Lock,
+  Clock,
+} from "lucide-react";
+import { useEffect, useState } from "react";
 import { Calendar, Search, Phone, ArrowRight, Send, Loader2, Lock, Clock } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -15,10 +25,68 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
-const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL || "https://calendly.com";
+const EMAILJS_SERVICE_ID = "service_5hsjh49";
+const EMAILJS_TEMPLATE_ID = "template_yjxm9uf";
+const EMAILJS_PUBLIC_KEY = "mtxkCzzMBkOL_eAp8";
+const CALENDLY_URL =
+  import.meta.env.VITE_CALENDLY_URL || "https://calendly.com";
+
+type ContactFormData = {
+  name: string;
+  company: string;
+  website: string;
+  email: string;
+  helpWith: string;
+  budget: string;
+  notes: string;
+};
+
+const helpWithLabels: Record<string, string> = {
+  cro: "CRO & Experimentation",
+  analytics: "Analytics & Attribution",
+  paid: "Performance Marketing",
+  all: "All three",
+  unsure: "Not sure yet",
+};
+
+const budgetLabels: Record<string, string> = {
+  under5k: "Under $5k",
+  "5k-15k": "$5k - $15k",
+  "15k-50k": "$15k - $50k",
+  over50k: "Over $50k",
+  "prefer-not": "Prefer not to say",
+};
+
+const buildEmailTemplateParams = (data: ContactFormData) => {
+  const helpWithLabel = helpWithLabels[data.helpWith] ?? data.helpWith;
+  const budgetLabel =
+    budgetLabels[data.budget] ?? (data.budget || "Not provided");
+  const notes = data.notes.trim() || "Not provided";
+
+  return {
+    from_name: data.name,
+    from_email: data.email,
+    reply_to: data.email,
+    company: data.company,
+    website: data.website,
+    help_with: helpWithLabel,
+    budget: budgetLabel,
+    notes,
+    subject: `New Revenue Teardown request from ${data.company}`,
+    message: [
+      "New Revenue Teardown request",
+      "",
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      `Company: ${data.company}`,
+      `Website: ${data.website}`,
+      `Help needed: ${helpWithLabel}`,
+      `Monthly budget: ${budgetLabel}`,
+      "",
+      `Notes: ${notes}`,
+    ].join("\n"),
+  };
+};
 
 const contactCards = [
   {
@@ -54,7 +122,7 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     company: "",
     website: "",
@@ -74,19 +142,12 @@ const Contact = () => {
     setError(false);
 
     try {
+      const templateParams = buildEmailTemplateParams(formData);
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          company: formData.company,
-          website: formData.website,
-          email: formData.email,
-          help_with: formData.helpWith,
-          budget: formData.budget,
-          notes: formData.notes,
-        },
-        EMAILJS_PUBLIC_KEY
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
       );
       setSubmitted(true);
     } catch {
@@ -98,53 +159,65 @@ const Contact = () => {
 
   const scrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("audit-form")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
-// FAQ structured data for Contact page
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do you require long-term contracts?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We work on 3-month initial engagements. After that it is month-to-month with 30 days notice to cancel."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where is your team based?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We are based in India, serving US and Canadian B2B companies. All communication is in English during US business hours."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How quickly can we get started?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Revenue Teardown audit takes 3 to 5 business days. Paid engagements kick off within one week of agreement."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does the Revenue Teardown include?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A written audit of your GA4 tracking setup, landing pages, or ad account — delivered within 5 business days with a prioritized list of fixes. No call required."
-      }
-    }
-  ]
-};
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      document
+        .getElementById("audit-form")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  // FAQ structured data for Contact page
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you require long-term contracts?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We work on 3-month initial engagements. After that it is month-to-month with 30 days notice to cancel.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where is your team based?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We are based in India, serving US and Canadian B2B companies. All communication is in English during US business hours.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How quickly can we get started?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The Revenue Teardown audit takes 3 to 5 business days. Paid engagements kick off within one week of agreement.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What does the Revenue Teardown include?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A written audit of your GA4 tracking setup, landing pages, or ad account — delivered within 5 business days with a prioritized list of fixes. No call required.",
+        },
+      },
+    ],
+  };
 
   return (
     <main className="bg-background">
-      <PageMeta 
-        title="Request a Revenue Teardown — Revium Labs" 
+      <PageMeta
+        title="Request a Revenue Teardown — Revium Labs"
         description="Request a free Revenue Teardown — we audit your tracking, landing pages, or ad account and deliver written findings within 5 business days. No commitment required."
         keywords="B2B marketing audit, free CRO audit, GA4 audit, marketing agency contact, revenue teardown"
         structuredData={faqSchema}
@@ -166,9 +239,9 @@ const faqSchema = {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            Book a call or request a free Revenue Teardown.
-            We will review your site before any call so the conversation starts
-            with specifics — not introductions.
+            Book a call or request a free Revenue Teardown. We will review your
+            site before any call so the conversation starts with specifics — not
+            introductions.
           </motion.p>
         </div>
       </section>
@@ -217,7 +290,7 @@ const faqSchema = {
       </section>
 
       {/* ───── AUDIT FORM ───── */}
-      <section id="audit-form" className="bg-muted py-12 md:py-24">
+      <section className="bg-muted py-12 md:py-24">
         <div className="container mx-auto px-5 md:px-6 max-w-2xl">
           <AnimatedSection className="text-center mb-8 md:mb-12">
             <h2 className="font-display text-[26px] leading-tight md:text-4xl font-extrabold text-foreground">
@@ -249,10 +322,16 @@ const faqSchema = {
               {error && (
                 <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 mb-5 text-center text-sm text-destructive">
                   Something went wrong. Please email us directly at{" "}
-                  <a href="mailto:hello@reviumlabs.co" className="underline font-semibold">hello@reviumlabs.co</a>
+                  <a
+                    href="mailto:hello@reviumlabs.co"
+                    className="underline font-semibold"
+                  >
+                    hello@reviumlabs.co
+                  </a>
                 </div>
               )}
               <form
+                id="audit-form"
                 onSubmit={handleSubmit}
                 className="space-y-5 rounded-2xl border border-border bg-card p-8 md:p-10"
               >
@@ -322,9 +401,15 @@ const faqSchema = {
                         <SelectValue placeholder="Select an option" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="cro">CRO &amp; Experimentation</SelectItem>
-                        <SelectItem value="analytics">Analytics &amp; Attribution</SelectItem>
-                        <SelectItem value="paid">Performance Marketing</SelectItem>
+                        <SelectItem value="cro">
+                          CRO &amp; Experimentation
+                        </SelectItem>
+                        <SelectItem value="analytics">
+                          Analytics &amp; Attribution
+                        </SelectItem>
+                        <SelectItem value="paid">
+                          Performance Marketing
+                        </SelectItem>
                         <SelectItem value="all">All three</SelectItem>
                         <SelectItem value="unsure">Not sure yet</SelectItem>
                       </SelectContent>
@@ -346,7 +431,9 @@ const faqSchema = {
                         <SelectItem value="5k-15k">$5k – $15k</SelectItem>
                         <SelectItem value="15k-50k">$15k – $50k</SelectItem>
                         <SelectItem value="over50k">Over $50k</SelectItem>
-                        <SelectItem value="prefer-not">Prefer not to say</SelectItem>
+                        <SelectItem value="prefer-not">
+                          Prefer not to say
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -381,13 +468,16 @@ const faqSchema = {
 
                 <div className="mt-6 space-y-3">
                   <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <Lock className="w-4 h-4 shrink-0" /> Your information is never shared with third parties
+                    <Lock className="w-4 h-4 shrink-0" /> Your information is
+                    never shared with third parties
                   </p>
                   <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4 shrink-0" /> We respond within one business day
+                    <Clock className="w-4 h-4 shrink-0" /> We respond within one
+                    business day
                   </p>
                   <p className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4 shrink-0" /> No commitment required to get your free audit
+                    <Calendar className="w-4 h-4 shrink-0" /> No commitment
+                    required to get your free audit
                   </p>
                 </div>
               </form>
